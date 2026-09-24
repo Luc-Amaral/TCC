@@ -133,17 +133,27 @@ def detectar_interface_fisica(interface_vpn=None):
     return candidatos[0][1]
 
 
-def obter_ip_real():
-    print("[*] Detectando IP público real da máquina...")
+def obter_ips_reais():
+    print("[*] Detectando IPs públicos reais da máquina (Bypass de Proxies Ativo)...")
+    ips = {'v4': None, 'v6': None}
+    sem_proxy = {"http": None, "https": None}
+    
     try:
-        resposta = requests.get('https://api.ipify.org?format=json', timeout=5)
-        ip = resposta.json().get('ip')
-        print(f"[+] IP real detectado com sucesso: {ip}")
-        return ip
-    except requests.RequestException as e:
-        print(f"[-] Erro ao obter IP real: {e}")
-        return None
+        ips['v4'] = requests.get('https://api.ipify.org?format=json', timeout=5, proxies=sem_proxy).json().get('ip')
+        print(f"[+] IPv4 real base: {ips['v4']}")
+    except Exception as e:
+        print(f"[-] Sem conectividade IPv4 base: {e}")
 
+    try:
+        trace_v6 = requests.get('https://[2606:4700:4700::1111]/cdn-cgi/trace', timeout=5, proxies=sem_proxy).text
+        ips['v6'] = next((linha.split('=')[1] for linha in trace_v6.splitlines() if linha.startswith('ip=')), None)
+        if ips['v6']:
+            print(f"[+] IPv6 real base: {ips['v6']}")
+    except Exception:
+        print("[-] Sem conectividade IPv6 nativa ativa.")
+        
+    return ips
+    
 
 def obter_dns_real():
     print("[*] Detectando servidores DNS originais...")

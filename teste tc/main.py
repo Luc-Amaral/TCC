@@ -2,11 +2,11 @@ import argparse
 import sys
 
 from core.nucleo_exec import VPNSecurityTester
-from utils.network import detectar_ambiente_vpn, listar_interfaces_ativas, obter_detalhes_interface, obter_dns_real, obter_ip_real
+from utils.network import detectar_ambiente_vpn, listar_interfaces_ativas, obter_detalhes_interface, obter_dns_real, obter_ips_reais
 
 
 def _parse_args():
-    parser = argparse.ArgumentParser(description='Teste de vazamentos e robustez de VPNs.')
+    parser = argparse.ArgumentParser(description='Auditoria Estrita de Isolamento de Roteamento L3/L4.')
     parser.add_argument('--interface-vpn', help='Interface da VPN, se a detecção automática falhar.')
     parser.add_argument('--interface-fisica', help='Interface física da máquina, se a detecção automática falhar.')
     parser.add_argument('--nome-vpn', help='Nome do processo da VPN, se a detecção automática falhar.')
@@ -15,7 +15,7 @@ def _parse_args():
     return parser.parse_args()
 
 
-def _confirmar_interface_fisica(interface_fisica):
+def _confirmar_interface_fisica(interface_fisica, modo_silencioso=False):
     if not interface_fisica:
         return None
 
@@ -23,6 +23,10 @@ def _confirmar_interface_fisica(interface_fisica):
     detalhes = obter_detalhes_interface(interface_fisica)
     print(f"    IP(s): {', '.join(detalhes.get('ips') or ['não identificado'])}")
     print(f"    Gateway padrão: {detalhes.get('gateway_padrao') or 'não identificado'}")
+    
+    if modo_silencioso:
+        return interface_fisica
+
     print('[*] Interfaces ativas disponíveis:')
     for iface in listar_interfaces_ativas():
         detalhe = obter_detalhes_interface(iface)
@@ -39,13 +43,14 @@ def _confirmar_interface_fisica(interface_fisica):
 
 
 if __name__ == "__main__":
-    print("=== Preparação para os Testes ===")
+    print("=== Preparação para os Testes (Baseline) ===")
     args = _parse_args()
 
-    MEU_IP_REAL = obter_ip_real()
+    MEUS_IPS_REAIS = obter_ips_reais()
     MEUS_DNS_REAIS = obter_dns_real()
 
-    if not MEU_IP_REAL or not MEUS_DNS_REAIS:
+    if not MEUS_IPS_REAIS.get('v4') or not MEUS_DNS_REAIS:
+        print("[-] Falha ao estabelecer o baseline da rede. Verifique a sua ligação à internet.")
         sys.exit(1)
 
     print("\n" + "=" * 50)
@@ -76,10 +81,10 @@ if __name__ == "__main__":
             raise SystemExit('Interface física não foi detectada e o modo sem prompt foi habilitado.')
         INTERFACE_FISICA = input("Digite a interface física da máquina (ex: Wi-Fi, Ethernet, en0, eth0): ").strip()
 
-    INTERFACE_FISICA = _confirmar_interface_fisica(INTERFACE_FISICA)
+    INTERFACE_FISICA = _confirmar_interface_fisica(INTERFACE_FISICA, args.sem_prompt)
 
     tester = VPNSecurityTester(
-        MEU_IP_REAL,
+        MEUS_IPS_REAIS,
         MEUS_DNS_REAIS,
         NOME_PROCESSO_VPN,
         INTERFACE_VPN,
