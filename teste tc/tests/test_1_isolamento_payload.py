@@ -11,8 +11,9 @@ def executar(interface_fisica, interface_vpn):
     resultado = {"status": "INCONCLUSIVO", "detalhes": "", "pacote_fisica": None, "pacote_vpn": None}
 
     try:
-        filtro = f"udp and dst port {destino_porta}"
-        print(f"    [*] Iniciando sniffer na física ({interface_fisica}) e na VPN ({interface_vpn})...")
+        # Filtro estrito: UDP, destino e porta específicos
+        filtro = f"udp and dst host {destino_ip} and dst port {destino_porta}"
+        print(f"    [*] Iniciando sensores na física ({interface_fisica}) e na VPN ({interface_vpn})...")
         
         sniffer_fisica = AsyncSniffer(iface=interface_fisica, filter=filtro)
         sniffer_vpn = AsyncSniffer(iface=interface_vpn, filter=filtro)
@@ -22,10 +23,11 @@ def executar(interface_fisica, interface_vpn):
             sniffer_vpn.start()
             time.sleep(1)
 
-            print(f"        [>] Injetando payload '{assinatura.decode()}' para {destino_ip}:{destino_porta}...")
+            print(f"        [>] Disparando payload de teste '{assinatura.decode()}' para {destino_ip}:{destino_porta}...")
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             s.settimeout(2)
             pacotes_enviados = 0
+            
             for _ in range(3):
                 try:
                     s.sendto(assinatura, (destino_ip, destino_porta))
@@ -40,8 +42,8 @@ def executar(interface_fisica, interface_vpn):
             sniffer_vpn.stop()
 
         if pacotes_enviados == 0:
-            resultado["detalhes"] = "Falha de roteamento nativo: socket falhou na injeção."
-            print(f"    [-] AVISO: {resultado['detalhes']}")
+            resultado["detalhes"] = "Falha de roteamento nativo: socket falhou na injeção do pacote."
+            print(f"    [-] RESULTADO INCONCLUSIVO: {resultado['detalhes']}")
             return resultado
 
         pacotes_vazados = [p for p in sniffer_fisica.results if p.haslayer(Raw) and assinatura in p[Raw].load]
@@ -55,10 +57,11 @@ def executar(interface_fisica, interface_vpn):
             print(f"        -> Vazamento capturado: {resultado['pacote_fisica']}")
             
         elif pacotes_encapsulados and not pacotes_vazados:
-            resultado["status"] = "SUCESSO"
+            resultado["status"] = "ISOLADO"
             resultado["pacote_vpn"] = pacotes_encapsulados[0].summary()
             resultado["detalhes"] = "Isolamento de payload L4 confirmado no adaptador virtual."
             print("    [+] ISOLAMENTO CONFIRMADO: O pacote transitou exclusivamente pela interface da VPN.")
+            print("        (Nota: Este teste atesta isolamento de rota, não força criptográfica).")
             
         else:
             resultado["status"] = "INCONCLUSIVO"

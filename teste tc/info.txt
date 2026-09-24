@@ -1,3 +1,8 @@
+ARQUIVO HISTORICO DE REVISAO
+
+As instrucoes atuais estao em README.md. O ponto de entrada ativo e main.py.
+Use o ambiente virtual Windows com .\vpn_tester_env\Scripts\Activate.ps1.
+
 sudo vpn_tester_env/bin/python vpn_tester.py
 
 https://ifconfig.me/

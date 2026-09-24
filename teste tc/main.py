@@ -2,7 +2,7 @@ import argparse
 import sys
 
 from core.nucleo_exec import VPNSecurityTester
-from utils.network import detectar_ambiente_vpn, listar_interfaces_ativas, obter_detalhes_interface, obter_dns_real, obter_ips_reais
+from utils.network import detectar_ambiente_vpn, interface_esta_ativa, listar_interfaces_ativas, obter_detalhes_interface, obter_dns_real, obter_ips_reais
 
 
 def _parse_args():
@@ -46,11 +46,14 @@ if __name__ == "__main__":
     print("=== Preparação para os Testes (Baseline) ===")
     args = _parse_args()
 
+    # O baseline agora exige a verificação completa (IPv4 e IPv6) blindada contra proxies
     MEUS_IPS_REAIS = obter_ips_reais()
     MEUS_DNS_REAIS = obter_dns_real()
 
+    # Bloqueio estrito: não avança se o baseline não for estabelecido (Evita falsos positivos na base)
     if not MEUS_IPS_REAIS.get('v4') or not MEUS_DNS_REAIS:
-        print("[-] Falha ao estabelecer o baseline da rede. Verifique a sua ligação à internet.")
+        print("[-] ERRO CRÍTICO: Falha ao estabelecer o baseline da rede (IP original não detectado).")
+        print("    A auditoria não pode prosseguir sem conhecer a assinatura original da máquina.")
         sys.exit(1)
 
     print("\n" + "=" * 50)
@@ -58,8 +61,10 @@ if __name__ == "__main__":
     if not args.sem_prompt:
         input("Pressione [ENTER] APENAS QUANDO A VPN ESTIVER CONECTADA...")
 
-    INTERFACE_VPN, NOME_PROCESSO_VPN, TIPO_VPN, INTERFACE_FISICA, DETALHES_REDE = detectar_ambiente_vpn()
+    # Passamos o argumento nome_vpn para forçar a busca exata caso o usuário forneça via CLI
+    INTERFACE_VPN, NOME_PROCESSO_VPN, TIPO_VPN, INTERFACE_FISICA, DETALHES_REDE = detectar_ambiente_vpn(args.nome_vpn)
 
+    # Substituição por argumentos de linha de comando, se fornecidos
     if args.interface_vpn:
         INTERFACE_VPN = args.interface_vpn
     if args.nome_vpn:
@@ -67,15 +72,17 @@ if __name__ == "__main__":
     if args.interface_fisica:
         INTERFACE_FISICA = args.interface_fisica
 
+    # Tratativas de falha de detecção com fallback manual
     if not INTERFACE_VPN:
         if args.sem_prompt:
             raise SystemExit('Interface da VPN não foi detectada e o modo sem prompt foi habilitado.')
         INTERFACE_VPN = input("Digite a interface da VPN (ex: tun0, utun3, wg0): ").strip()
+        
     if not NOME_PROCESSO_VPN:
-        if args.sem_prompt:
-            NOME_PROCESSO_VPN = 'desconhecido'
-        else:
-            NOME_PROCESSO_VPN = input("Digite o processo da VPN (ex: openvpn, wg, nordvpn): ").strip()
+        NOME_PROCESSO_VPN = 'nao-detectado'
+        print("[!] Processo principal da VPN não foi identificado automaticamente.")
+        print("    Os testes de tráfego continuarão; o kill switch será INCONCLUSIVO.")
+            
     if not INTERFACE_FISICA:
         if args.sem_prompt:
             raise SystemExit('Interface física não foi detectada e o modo sem prompt foi habilitado.')
@@ -83,6 +90,12 @@ if __name__ == "__main__":
 
     INTERFACE_FISICA = _confirmar_interface_fisica(INTERFACE_FISICA, args.sem_prompt)
 
+    if not interface_esta_ativa(INTERFACE_VPN):
+        raise SystemExit(f"Interface VPN '{INTERFACE_VPN}' nao esta ativa; auditoria cancelada.")
+    if not interface_esta_ativa(INTERFACE_FISICA):
+        raise SystemExit(f"Interface fisica '{INTERFACE_FISICA}' nao esta ativa; auditoria cancelada.")
+
+    # Inicialização do Orquestrador
     tester = VPNSecurityTester(
         MEUS_IPS_REAIS,
         MEUS_DNS_REAIS,
@@ -92,4 +105,6 @@ if __name__ == "__main__":
         info_rede=DETALHES_REDE,
         salvar_relatorio=args.salvar_relatorio,
     )
-    tester.run_all_tests()
+    
+    # Executa a suíte e garante que a chamada retorna o relatório gerado (como exigido no Plano)
+    relatorio_final = tester.run_all_tests()

@@ -1,0 +1,457 @@
+RELATORIO COMPLETO - VPN SECURITY TESTER
+=========================================
+
+Data do relatorio: 2026-09-24
+Projeto: teste tc
+Sistema alvo: Windows
+Escopo: auditoria de isolamento de rede L3/L4, privacidade, rotas e comportamento de bloqueio apos queda da VPN.
+
+IMPORTANTE
+----------
+Este projeto nao comprova matematicamente que uma VPN e segura em todos os cenarios.
+Ele produz evidencias dentro dos protocolos, interfaces e condicoes monitorados.
+A conclusao correta e: "VPN aprovada nos cenarios definidos para esta auditoria".
+
+
+1. ALTERACOES REALIZADAS
+========================
+
+1.1 Integracao e orquestracao
+-----------------------------
+- O ponto de entrada continua sendo main.py.
+- O baseline de IP e DNS e coletado antes da conexao da VPN.
+- O processo da VPN e descoberto automaticamente.
+- A interface VPN e a interface fisica sao descobertas automaticamente.
+- O usuario nao precisa mais informar manualmente o processo da VPN.
+- O argumento --nome-vpn permanece disponivel apenas como substituicao opcional.
+- A execucao e interrompida se as interfaces selecionadas nao estiverem ativas.
+- Excecoes individuais dos testes sao convertidas em resultado ERRO e nao interrompem os testes seguintes.
+- run_all_tests() retorna o relatorio final.
+
+1.2 Descoberta automatica do processo VPN
+-----------------------------------------
+- A interface VPN e detectada por nomes conhecidos de adaptadores.
+- Processos conhecidos de clientes VPN sao pesquisados automaticamente.
+- O processo cujo nome corresponde a interface VPN recebe prioridade.
+- Processos auxiliares contendo dnsblock, dns-block ou helper sao ignorados.
+- Se nenhum processo confiavel for encontrado, o kill switch retorna INCONCLUSIVO.
+- Isso evita encerrar acidentalmente apenas um componente auxiliar.
+
+1.3 Politica de resultados
+--------------------------
+Estados aprovados dentro do escopo:
+- SUCESSO
+- ISOLADO
+- BLOQUEADO
+
+Estados que impedem aprovacao:
+- INCONCLUSIVO
+- ERRO
+
+Estado de falha:
+- FALHA
+
+Regras:
+- Qualquer FALHA gera REPROVADO.
+- Qualquer ERRO ou INCONCLUSIVO gera NAO COMPROVADO.
+- APROVADO NO ESCOPO so ocorre quando todos os testes terminam em SUCESSO, ISOLADO ou BLOQUEADO.
+
+1.4 Resumo final
+----------------
+O resumo agora separa:
+- APROVADOS
+- INCONCLUSIVOS
+- FALHAS
+- ERROS
+
+A privacidade tambem e detalhada separadamente:
+- IPv4
+- IPv6
+- DNS
+- DoH/DoT
+
+Isso evita esconder um IPv6 inconclusivo quando o IPv4 foi aprovado.
+
+1.5 Teste de isolamento de payload
+-----------------------------------
+Arquivo: tests/test_1_isolamento_payload.py
+
+- Payload conhecido: VPN_TEST_PAYLOAD.
+- Destino controlado: 8.8.8.8:9999.
+- Captura simultanea na interface fisica e na interface VPN.
+- Filtro especifico para UDP e porta de destino.
+- Payload na interface fisica: FALHA.
+- Payload somente na VPN: ISOLADO.
+- Payload em nenhuma interface: INCONCLUSIVO.
+- Socket sem envio: INCONCLUSIVO.
+- Mensagem deixa claro que o teste mede isolamento de rota, nao forca criptografica.
+
+Este teste nao comprova algoritmo, autenticacao, resistencia a replay ou forca da criptografia.
+
+1.6 Teste de isolamento HTTP
+----------------------------
+Arquivo: tests/test_2_isolamento_http.py
+
+- O IP de neverssl.com e resolvido antes da captura.
+- O filtro limita a captura ao IP do destino e a porta TCP/80.
+- A requisicao e feita diretamente, sem proxy configurado pelo teste.
+- Erro ou ausencia de evidencia gera INCONCLUSIVO.
+- Trafego na interface fisica gera FALHA.
+- Trafego somente na VPN gera ISOLADO.
+- O teste foi nomeado como isolamento HTTP, e nao como integridade criptografica.
+
+O teste ainda nao prova alteracao, autenticidade ou integridade criptografica do conteudo HTTP.
+
+1.7 Teste de privacidade IPv4, IPv6 e DNS
+----------------------------------------
+Arquivo: tests/test_3_privacidade.py
+
+IPv4:
+- Compara o IPv4 atual com o IPv4 coletado no baseline.
+- IPv4 igual ao baseline: IPv4_VAZADO e FALHA.
+- IPv4 diferente: IPv4_MASCARADO.
+- Falha na consulta: IPv4_INCONCLUSIVO ou IPv4_ERRO.
+
+IPv6:
+- Compara o IPv6 atual com o IPv6 coletado no baseline.
+- IPv6 igual ao baseline: IPv6_VAZADO e FALHA.
+- IPv6 diferente: IPv6_ATIVO_MASCARADO.
+- Falha, timeout ou impossibilidade de comparar: IPv6_INCONCLUSIVO ou IPv6_ERRO.
+- Timeout nao e tratado automaticamente como sucesso.
+
+DNS tradicional:
+- Usa dominio unico para reduzir efeito de cache.
+- Captura UDP/53 e TCP/53 por meio do filtro port 53.
+- Registra dominio consultado.
+- Registra quantidade de pacotes na interface fisica e na VPN.
+- Registra os protocolos observados.
+- DNS na interface fisica: FALHA.
+- DNS somente na VPN: ISOLADO.
+- Nenhuma evidencia: INCONCLUSIVO.
+
+DoH e DoT:
+- DoH e tentado sobre HTTPS/TCP 443 para 1.1.1.1.
+- DoT e tentado sobre TLS/TCP 853 para 1.1.1.1.
+- O teste verifica o caminho observado, nao o conteudo DNS criptografado.
+- Trafego DoH/DoT na interface fisica: FALHA.
+- Trafego somente na VPN: ISOLADO.
+- Nenhum pacote observado: INCONCLUSIVO.
+
+1.8 Teste de isolamento de rotas
+--------------------------------
+Arquivo: tests/test_4_isolamento_rota.py
+
+A matriz atual tenta:
+- TCP/80 para IPv4.
+- TCP/443 para IPv4.
+- TCP/443 para IPv6.
+- UDP/53 para IPv4.
+- UDP/443 para IPv4.
+
+As conexoes TCP usam sockets diretos, sem proxy.
+O teste captura a interface fisica e a interface VPN.
+SYN ou UDP na interface fisica: FALHA.
+Trafego somente na VPN: ISOLADO.
+Nenhuma tentativa ou evidencia: INCONCLUSIVO.
+
+Este teste representa o comportamento com a VPN ativa. Ele nao substitui o kill switch.
+
+1.9 Teste de kill switch
+------------------------
+Arquivo: tests/test_5_killswitch.py
+
+- O processo VPN e localizado automaticamente.
+- Processos auxiliares sao rejeitados.
+- A captura na interface fisica inicia antes da queda.
+- O processo principal e encerrado e aguardado.
+- is_running() e wait() sao usados para confirmar o termino.
+- O timestamp da queda e registrado.
+- As conexoes posteriores usam socket TCP direto, sem requests ou proxy.
+- Sao feitas cinco tentativas para 8.8.4.4:443.
+- Somente SYNs posteriores ao timestamp da queda sao analisados.
+- Sao registrados:
+  - tentativas_pos_queda;
+  - syns_pos_queda;
+  - captura_confirmada;
+  - processo_terminou;
+  - rotas_antes;
+  - rotas_depois;
+  - interface_vpn_antes;
+  - interface_vpn_depois.
+- SYN apos a queda na interface fisica: FALHA.
+- Tentativas confirmadas sem SYN fisico: BLOQUEADO.
+- Falta de captura ou de confirmacao: INCONCLUSIVO.
+
+O teste altera o estado da VPN e exige privilegio administrativo.
+
+1.10 Relatorio JSON e rede
+--------------------------
+Arquivos: core/nucleo_exec.py e utils/network.py
+
+- Objetos psutil sao convertidos para dicionarios nativos.
+- Interfaces, IPs, status, gateway e tabela de rotas sao registrados.
+- O relatorio inclui escopo da auditoria.
+- O relatorio inclui baseline de IP e DNS.
+- O relatorio inclui interfaces e resultados individuais.
+- _salvar_relatorio() retorna True ou False.
+- run_all_tests() retorna o relatorio.
+- A serializacao JSON foi validada com dados reais.
+
+1.11 Testes automatizados
+-------------------------
+Arquivo: tests/test_auditoria_unitaria.py
+
+Testa sem rede real:
+- Politica com estados aprovados.
+- Politica com INCONCLUSIVO.
+- Politica com FALHA.
+- Assinaturas entre orquestrador e testes.
+- Serializacao do snapshot de rede.
+- Timeout IPv6 permanecendo inconclusivo.
+- Mocks de Scapy, DNS e sockets.
+
+Arquivo: tests/test_integracao_rede.py
+
+- Teste de integracao opt-in.
+- Nao executa por padrao.
+- Nao encerra a VPN.
+- Verifica baseline IPv4, snapshot JSON e descoberta de interfaces.
+
+Para executar integracao real:
+
+PowerShell:
+$env:VPN_INTEGRATION = "1"
+python -m unittest tests.test_integracao_rede -v
+
+
+2. FUNCOES IMPLEMENTADAS
+========================
+
+2.1 main.py
+-----------
+
+_parse_args()
+- Le argumentos da linha de comando.
+- Permite interfaces manuais, modo sem prompt, processo opcional e relatorio.
+
+_confirmar_interface_fisica(interface_fisica, modo_silencioso=False)
+- Mostra detalhes da interface fisica.
+- Lista interfaces ativas.
+- Permite confirmacao manual quando o modo interativo esta ativo.
+- Retorna a interface selecionada.
+
+Bloco principal de execucao
+- Coleta baseline antes da VPN.
+- Aguarda conexao da VPN quando necessario.
+- Detecta interfaces e processo automaticamente.
+- Valida que as interfaces estao ativas.
+- Cria VPNSecurityTester.
+- Executa todos os testes.
+
+2.2 core/nucleo_exec.py
+-----------------------
+
+VPNSecurityTester.__init__()
+- Guarda baseline, processo, interfaces e configuracoes do relatorio.
+- Define o escopo da auditoria.
+
+VPNSecurityTester.run_all_tests()
+- Executa os cinco testes ativos em ordem.
+- Protege cada teste contra excecao nao tratada.
+- Gera o relatorio.
+- Salva o relatorio quando solicitado.
+- Retorna o relatorio final.
+
+VPNSecurityTester._executar_com_protecao()
+- Executa uma funcao de teste dentro de try/except.
+- Converte excecao em resultado ERRO.
+- Permite que os outros testes continuem.
+
+VPNSecurityTester._avaliar_politica_resultado()
+- Consolida os estados individuais.
+- Decide entre APROVADO NO ESCOPO, NAO COMPROVADO ou REPROVADO.
+
+VPNSecurityTester._gerar_relatorio()
+- Imprime resumo agrupado.
+- Mostra privacidade detalhada por IPv4, IPv6, DNS e DoH/DoT.
+- Cria o dicionario do relatorio JSON.
+
+VPNSecurityTester._imprimir_grupo()
+- Imprime itens de um grupo de resultados.
+- Exibe nenhum quando o grupo esta vazio.
+
+VPNSecurityTester._salvar_relatorio()
+- Grava o relatorio em arquivo JSON.
+- Retorna sucesso ou falha.
+
+2.3 utils/network.py
+--------------------
+
+_interface_e_vpn(interface_name)
+- Verifica se o nome de uma interface corresponde a palavras-chave VPN.
+
+obter_tabela_rotas()
+- Captura a tabela de rotas IPv4 do sistema operacional.
+
+interface_esta_ativa(nome_interface)
+- Verifica se uma interface existe e esta ativa.
+
+_obter_gateway_padrao()
+- Descobre o gateway padrao em Windows, Linux ou macOS.
+
+obter_informacoes_redes()
+- Coleta interfaces, IPs, status, gateway e tabela de rotas.
+- Converte os dados para estruturas serializaveis.
+
+detectar_interface_fisica(interface_vpn=None)
+- Escolhe uma interface fisica candidata.
+- Exclui VPNs, loopback e adaptadores virtuais conhecidos.
+- Prioriza interfaces com IP e nome fisico conhecido.
+
+obter_ips_reais()
+- Coleta IPv4 e IPv6 do baseline sem usar proxy.
+
+obter_dns_real()
+- Coleta os servidores DNS configurados originalmente.
+
+listar_interfaces_ativas()
+- Lista interfaces ativas que podem ser exibidas ao usuario.
+
+obter_detalhes_interface(iface)
+- Retorna IPs e gateway de uma interface.
+
+detectar_ambiente_vpn(nome_processo_exato=None)
+- Detecta interface VPN.
+- Procura processos VPN conhecidos.
+- Prioriza processo com nome igual ao adaptador.
+- Ignora processos auxiliares.
+- Retorna interface VPN, processo, tipo, interface fisica e snapshot de rede.
+
+2.4 Testes ativos
+------------------
+
+test_1_isolamento_payload.executar(interface_fisica, interface_vpn)
+- Gera payload UDP conhecido.
+- Captura interface fisica e VPN.
+- Classifica FALHA, ISOLADO ou INCONCLUSIVO.
+
+test_2_isolamento_http.executar(interface_fisica, interface_vpn)
+- Resolve neverssl.com.
+- Gera requisicao HTTP direta.
+- Captura somente o destino resolvido.
+- Classifica isolamento ou vazamento.
+
+test_3_privacidade.executar(ips_reais, dns_real, interface_fisica, interface_vpn)
+- Compara IPv4 e IPv6 com baseline.
+- Captura DNS tradicional.
+- Tenta DoH e DoT.
+- Registra evidencias e estados individuais.
+
+test_4_isolamento_rota.executar(interface_fisica, interface_vpn)
+- Gera trafego TCP e UDP para IPv4 e IPv6.
+- Captura pacotes nas duas interfaces.
+- Classifica vazamento ou isolamento de rota.
+
+test_5_killswitch.executar(nome_processo_vpn, interface_fisica, interface_vpn)
+- Localiza o processo VPN.
+- Inicia captura antes da queda.
+- Encerra o processo.
+- Faz conexoes TCP diretas depois da queda.
+- Analisa somente pacotes posteriores.
+- Retorna BLOQUEADO, FALHA ou INCONCLUSIVO.
+
+2.5 Testes auxiliares
+---------------------
+
+FakeSniffer
+- Substitui AsyncSniffer nos testes unitarios.
+- Evita captura real durante os testes automatizados.
+
+AuditoriaUnitTests.make_tester()
+- Cria um auditor com dados de teste.
+
+AuditoriaUnitTests.test_policy_accepts_only_approved_states()
+- Confirma que estados aprovados resultam em APROVADO NO ESCOPO.
+
+AuditoriaUnitTests.test_policy_rejects_inconclusive_and_failure()
+- Confirma que inconclusivo nao aprova e falha reprova.
+
+AuditoriaUnitTests.test_payload_signature_matches_orchestrator()
+- Confirma contratos de argumentos dos testes 1 e 5.
+
+AuditoriaUnitTests.test_network_snapshot_is_json_serializable()
+- Confirma serializacao do snapshot de rede.
+
+AuditoriaUnitTests.test_ipv6_timeout_does_not_approve_privacy()
+- Confirma que timeout IPv6 nao aprova privacidade.
+
+NetworkIntegrationTests.test_network_snapshot_is_real_and_serializable()
+- Verifica snapshot em ambiente real quando habilitado.
+
+NetworkIntegrationTests.test_baseline_has_ipv4()
+- Verifica IPv4 real em ambiente real quando habilitado.
+
+NetworkIntegrationTests.test_vpn_discovery_returns_consistent_interfaces()
+- Verifica interfaces e processo detectados em ambiente real quando habilitado.
+
+
+3. VALIDACOES REALIZADAS
+========================
+
+Comando unitario:
+python -m unittest tests.test_auditoria_unitaria -v
+Resultado: 5 testes OK.
+
+Comando de integracao sem habilitacao:
+python -m unittest tests.test_integracao_rede -v
+Resultado: testes ignorados por padrao.
+
+Comando de compilacao:
+python -m compileall -q main.py core tests utils
+Resultado: OK.
+
+Validacao JSON:
+json.dumps(obter_informacoes_redes())
+Resultado: OK.
+
+Validacao de descoberta:
+A deteccao automatica identificou HoxxVPN, processo principal HoxxVPN.exe e Ethernet no ambiente testado.
+
+
+4. RESULTADO DA EXECUCAO REAL OBSERVADA
+=======================================
+
+- Payload: ISOLADO.
+- HTTP: ISOLADO.
+- IPv4: mascarado.
+- DNS tradicional: ISOLADO na VPN.
+- Rotas testadas: ISOLADAS na VPN.
+- Kill switch: BLOQUEADO apos encerramento do processo principal.
+- IPv6: INCONCLUSIVO, pois nao havia conectividade IPv6 nativa no baseline.
+- Veredicto geral: NAO COMPROVADO.
+
+Esse veredicto e correto porque um resultado IPv6 inconclusivo nao deve ser transformado em aprovacao.
+
+
+5. LIMITACOES ATUAIS
+====================
+
+- DoH e DoT sao testados por rota, nao por inspeccao do conteudo criptografado.
+- A criptografia real, algoritmo e autenticacao nao sao comprovados por captura L3/L4.
+- IPv6 precisa ser executado em uma rede com IPv6 nativo para comparacao completa.
+- O kill switch encerra o processo VPN e exige privilegio administrativo.
+- A matriz de rotas e ampla, mas nao representa todos os destinos, portas ou falhas possiveis.
+- Pastas backup e arquivos pyc antigos nao fazem parte do caminho ativo.
+- Testes de integracao real sao opt-in para evitar alterar a rede durante testes comuns.
+
+
+6. INTERPRETACAO FINAL
+======================
+
+O sistema agora fornece uma auditoria mais detalhada de isolamento, privacidade, protocolos, rotas e comportamento apos queda do processo VPN.
+
+A conclusao tecnicamente correta continua sendo:
+
+"A VPN foi aprovada ou reprovada dentro dos cenarios observados, e os resultados inconclusivos foram mantidos explicitamente."
+
+Nao e correto concluir que a VPN foi comprovada segura em todos os cenarios possiveis.
