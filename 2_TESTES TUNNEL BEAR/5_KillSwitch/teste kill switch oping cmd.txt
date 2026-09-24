@@ -1,0 +1,56 @@
+C:\Users\lucas>ping google.com -t
+
+Disparando google.com [142.251.132.174] com 32 bytes de dados:
+Resposta de 142.251.132.174: bytes=32 tempo=141ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=141ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=142ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=143ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=141ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=142ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=142ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=143ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=141ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=141ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=142ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=142ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=145ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=141ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=142ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=141ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=141ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=148ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=359ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=238ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=141ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=249ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=217ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=436ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=250ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=183ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=221ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=155ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=316ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=467ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=604ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=144ms TTL=117
+Resposta de 142.251.132.174: bytes=32 tempo=375ms TTL=115
+Resposta de 142.251.132.174: bytes=32 tempo=280ms TTL=115
+Resposta de 142.251.132.174: bytes=32 tempo=186ms TTL=115
+Resposta de 142.251.132.174: bytes=32 tempo=262ms TTL=115
+Resposta de 142.251.132.174: bytes=32 tempo=181ms TTL=115
+Resposta de 142.251.132.174: bytes=32 tempo=179ms TTL=115
+Resposta de 142.251.132.174: bytes=32 tempo=179ms TTL=115
+Resposta de 142.251.132.174: bytes=32 tempo=182ms TTL=115
+Resposta de 142.251.132.174: bytes=32 tempo=178ms TTL=115
+Resposta de 142.251.132.174: bytes=32 tempo=177ms TTL=115
+Resposta de 142.251.132.174: bytes=32 tempo=178ms TTL=115
+Resposta de 142.251.132.174: bytes=32 tempo=177ms TTL=115
+Resposta de 142.251.132.174: bytes=32 tempo=177ms TTL=115
+Resposta de 142.251.132.174: bytes=32 tempo=177ms TTL=115
+
+Estatísticas do Ping para 142.251.132.174:
+    Pacotes: Enviados = 46, Recebidos = 46, Perdidos = 0 (0% de
+             perda),
+Aproximar um número redondo de vezes em milissegundos:
+    Mínimo = 141ms, Máximo = 604ms, Média = 204ms
+Control-C

@@ -1,0 +1,4713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<psml version="0" creator="wireshark/4.6.4">
+<structure>
+<section>No.</section>
+<section>Time</section>
+<section>Source</section>
+<section>Destination</section>
+<section>Protocol</section>
+<section>Length</section>
+<section>Info</section>
+</structure>
+
+<packet>
+<section>1</section>
+<section>0.000000000</section>
+<section>192.168.1.29</section>
+<section>255.255.255.255</section>
+<section>UDP</section>
+<section>303</section>
+<section>63783 → 6667 Len=261</section>
+</packet>
+
+<packet>
+<section>2</section>
+<section>0.632741600</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>82</section>
+<section>Standard query 0x0000 PTR _googlecast._tcp.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>3</section>
+<section>0.632817400</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>82</section>
+<section>Standard query 0x0000 PTR _googlecast._tcp.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>4</section>
+<section>1.306743500</section>
+<section>192.168.1.25</section>
+<section>13.227.207.80</section>
+<section>TLSv1.2</section>
+<section>740</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>5</section>
+<section>1.324353900</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 23733 [ACK] Seq=1 Ack=687 Win=163 Len=0</section>
+</packet>
+
+<packet>
+<section>6</section>
+<section>1.325049400</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>108</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>7</section>
+<section>1.325192100</section>
+<section>192.168.1.25</section>
+<section>13.227.207.80</section>
+<section>TLSv1.2</section>
+<section>298</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>8</section>
+<section>1.399966000</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 23733 [ACK] Seq=55 Ack=931 Win=166 Len=0</section>
+</packet>
+
+<packet>
+<section>9</section>
+<section>1.489191900</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>1341</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>10</section>
+<section>1.489191900</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>88</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>11</section>
+<section>1.489231600</section>
+<section>192.168.1.25</section>
+<section>13.227.207.80</section>
+<section>TCP</section>
+<section>54</section>
+<section>23733 → 443 [ACK] Seq=931 Ack=1376 Win=508 Len=0</section>
+</packet>
+
+<packet>
+<section>12</section>
+<section>1.735592500</section>
+<section>fe80::8606:faff:fe31:3458</section>
+<section>ff02::1</section>
+<section>ICMPv6</section>
+<section>182</section>
+<section>Router Advertisement from 84:06:fa:31:34:58</section>
+</packet>
+
+<packet>
+<section>13</section>
+<section>1.750754900</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>0xfffa</section>
+<section>100</section>
+<section>Ethernet II</section>
+</packet>
+
+<packet>
+<section>14</section>
+<section>2.067010200</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.20? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>15</section>
+<section>2.163868100</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.21? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>16</section>
+<section>2.182856500</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.22? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>17</section>
+<section>2.274898300</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.23? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>18</section>
+<section>2.284058800</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>66</section>
+<section>42788 → 443 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 WS=256 SACK_PERM</section>
+</packet>
+
+<packet>
+<section>19</section>
+<section>2.302723300</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>66</section>
+<section>443 → 42788 [SYN, ACK] Seq=0 Ack=1 Win=65535 Len=0 MSS=1400 SACK_PERM WS=8192</section>
+</packet>
+
+<packet>
+<section>20</section>
+<section>2.302779100</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>54</section>
+<section>42788 → 443 [ACK] Seq=1 Ack=1 Win=131584 Len=0</section>
+</packet>
+
+<packet>
+<section>21</section>
+<section>2.302995900</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TLSv1.2</section>
+<section>428</section>
+<section>Client Hello (SNI=api.polargrizzly.com)</section>
+</packet>
+
+<packet>
+<section>22</section>
+<section>2.321595000</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 42788 [ACK] Seq=1 Ack=375 Win=131072 Len=0</section>
+</packet>
+
+<packet>
+<section>23</section>
+<section>2.323693900</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>1454</section>
+<section>Server Hello</section>
+</packet>
+
+<packet>
+<section>24</section>
+<section>2.323811500</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>1454</section>
+<section>443 → 42788 [ACK] Seq=1401 Ack=375 Win=131072 Len=1400 [TCP PDU reassembled in 26]</section>
+</packet>
+
+<packet>
+<section>25</section>
+<section>2.323819000</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>54</section>
+<section>42788 → 443 [ACK] Seq=375 Ack=2801 Win=131584 Len=0</section>
+</packet>
+
+<packet>
+<section>26</section>
+<section>2.323920300</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>1328</section>
+<section>Certificate, Server Key Exchange, Server Hello Done</section>
+</packet>
+
+<packet>
+<section>27</section>
+<section>2.325064000</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TLSv1.2</section>
+<section>147</section>
+<section>Client Key Exchange, Change Cipher Spec, Encrypted Handshake Message</section>
+</packet>
+
+<packet>
+<section>28</section>
+<section>2.342881700</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>312</section>
+<section>New Session Ticket, Change Cipher Spec, Encrypted Handshake Message</section>
+</packet>
+
+<packet>
+<section>29</section>
+<section>2.343595700</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TLSv1.2</section>
+<section>1432</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>30</section>
+<section>2.362028700</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>108</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>31</section>
+<section>2.362118700</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TLSv1.2</section>
+<section>137</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>32</section>
+<section>2.420001100</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 42788 [ACK] Seq=4387 Ack=1929 Win=131072 Len=0</section>
+</packet>
+
+<packet>
+<section>33</section>
+<section>2.511168500</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>850</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>34</section>
+<section>2.511168500</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>85</section>
+<section>Encrypted Alert</section>
+</packet>
+
+<packet>
+<section>35</section>
+<section>2.511190800</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>54</section>
+<section>42788 → 443 [ACK] Seq=1929 Ack=5214 Win=130560 Len=0</section>
+</packet>
+
+<packet>
+<section>36</section>
+<section>2.511467800</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>54</section>
+<section>42788 → 443 [RST, ACK] Seq=1929 Ack=5214 Win=0 Len=0</section>
+</packet>
+
+<packet>
+<section>37</section>
+<section>2.512566400</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 42788 [FIN, ACK] Seq=5214 Ack=1929 Win=131072 Len=0</section>
+</packet>
+
+<packet>
+<section>38</section>
+<section>2.536747500</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>66</section>
+<section>42789 → 443 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 WS=256 SACK_PERM</section>
+</packet>
+
+<packet>
+<section>39</section>
+<section>2.556992900</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>66</section>
+<section>443 → 42789 [SYN, ACK] Seq=0 Ack=1 Win=65535 Len=0 MSS=1400 SACK_PERM WS=8192</section>
+</packet>
+
+<packet>
+<section>40</section>
+<section>2.557031600</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>54</section>
+<section>42789 → 443 [ACK] Seq=1 Ack=1 Win=131584 Len=0</section>
+</packet>
+
+<packet>
+<section>41</section>
+<section>2.557241800</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TLSv1.2</section>
+<section>428</section>
+<section>Client Hello (SNI=api.polargrizzly.com)</section>
+</packet>
+
+<packet>
+<section>42</section>
+<section>2.575901000</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 42789 [ACK] Seq=1 Ack=375 Win=131072 Len=0</section>
+</packet>
+
+<packet>
+<section>43</section>
+<section>2.576574700</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>169</section>
+<section>Server Hello, Change Cipher Spec, Encrypted Handshake Message</section>
+</packet>
+
+<packet>
+<section>44</section>
+<section>2.577384400</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TLSv1.2</section>
+<section>780</section>
+<section>Change Cipher Spec, Encrypted Handshake Message, Application Data</section>
+</packet>
+
+<packet>
+<section>45</section>
+<section>2.635425100</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 42789 [ACK] Seq=116 Ack=1101 Win=131072 Len=0</section>
+</packet>
+
+<packet>
+<section>46</section>
+<section>2.647216200</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>82</section>
+<section>Standard query 0x0000 PTR _googlecast._tcp.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>47</section>
+<section>2.647288200</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>82</section>
+<section>Standard query 0x0000 PTR _googlecast._tcp.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>48</section>
+<section>2.733631400</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>1094</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>49</section>
+<section>2.733631400</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>85</section>
+<section>Encrypted Alert</section>
+</packet>
+
+<packet>
+<section>50</section>
+<section>2.733657800</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>54</section>
+<section>42789 → 443 [ACK] Seq=1101 Ack=1187 Win=130304 Len=0</section>
+</packet>
+
+<packet>
+<section>51</section>
+<section>2.733987400</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>54</section>
+<section>42789 → 443 [RST, ACK] Seq=1101 Ack=1187 Win=0 Len=0</section>
+</packet>
+
+<packet>
+<section>52</section>
+<section>2.734696500</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>66</section>
+<section>42790 → 443 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 WS=256 SACK_PERM</section>
+</packet>
+
+<packet>
+<section>53</section>
+<section>2.735301300</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 42789 [FIN, ACK] Seq=1187 Ack=1101 Win=131072 Len=0</section>
+</packet>
+
+<packet>
+<section>54</section>
+<section>2.753409100</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>66</section>
+<section>443 → 42790 [SYN, ACK] Seq=0 Ack=1 Win=65535 Len=0 MSS=1400 SACK_PERM WS=8192</section>
+</packet>
+
+<packet>
+<section>55</section>
+<section>2.753443900</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>54</section>
+<section>42790 → 443 [ACK] Seq=1 Ack=1 Win=131584 Len=0</section>
+</packet>
+
+<packet>
+<section>56</section>
+<section>2.753649600</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TLSv1.2</section>
+<section>428</section>
+<section>Client Hello (SNI=api.polargrizzly.com)</section>
+</packet>
+
+<packet>
+<section>57</section>
+<section>2.772251200</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 42790 [ACK] Seq=1 Ack=375 Win=131072 Len=0</section>
+</packet>
+
+<packet>
+<section>58</section>
+<section>2.773174100</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>169</section>
+<section>Server Hello, Change Cipher Spec, Encrypted Handshake Message</section>
+</packet>
+
+<packet>
+<section>59</section>
+<section>2.773841500</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TLSv1.2</section>
+<section>824</section>
+<section>Change Cipher Spec, Encrypted Handshake Message, Application Data</section>
+</packet>
+
+<packet>
+<section>60</section>
+<section>2.832067500</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 42790 [ACK] Seq=116 Ack=1145 Win=131072 Len=0</section>
+</packet>
+
+<packet>
+<section>61</section>
+<section>2.982042300</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>1452</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>62</section>
+<section>2.982645100</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>708</section>
+<section>Application Data, Encrypted Alert</section>
+</packet>
+
+<packet>
+<section>63</section>
+<section>2.982676400</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>54</section>
+<section>42790 → 443 [ACK] Seq=1145 Ack=2169 Win=131584 Len=0</section>
+</packet>
+
+<packet>
+<section>64</section>
+<section>2.982917000</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>54</section>
+<section>42790 → 443 [RST, ACK] Seq=1145 Ack=2169 Win=0 Len=0</section>
+</packet>
+
+<packet>
+<section>65</section>
+<section>2.994702800</section>
+<section>172.172.255.216</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>356</section>
+<section>Application Data, Application Data</section>
+</packet>
+
+<packet>
+<section>66</section>
+<section>3.007452100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>TLSv1.2</section>
+<section>245</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>67</section>
+<section>3.007790100</section>
+<section>192.168.1.25</section>
+<section>8.8.8.8</section>
+<section>UDP</section>
+<section>95</section>
+<section>63317 → 443 Len=53</section>
+</packet>
+
+<packet>
+<section>68</section>
+<section>3.007878900</section>
+<section>192.168.1.25</section>
+<section>8.8.4.4</section>
+<section>UDP</section>
+<section>94</section>
+<section>63906 → 443 Len=52</section>
+</packet>
+
+<packet>
+<section>69</section>
+<section>3.007945700</section>
+<section>192.168.1.25</section>
+<section>8.8.4.4</section>
+<section>UDP</section>
+<section>95</section>
+<section>60677 → 443 Len=53</section>
+</packet>
+
+<packet>
+<section>70</section>
+<section>3.008012300</section>
+<section>192.168.1.25</section>
+<section>8.8.8.8</section>
+<section>UDP</section>
+<section>95</section>
+<section>49993 → 443 Len=53</section>
+</packet>
+
+<packet>
+<section>71</section>
+<section>3.025864800</section>
+<section>8.8.4.4</section>
+<section>192.168.1.25</section>
+<section>UDP</section>
+<section>632</section>
+<section>443 → 60677 Len=590</section>
+</packet>
+
+<packet>
+<section>72</section>
+<section>3.025864800</section>
+<section>8.8.4.4</section>
+<section>192.168.1.25</section>
+<section>UDP</section>
+<section>64</section>
+<section>443 → 60677 Len=22</section>
+</packet>
+
+<packet>
+<section>73</section>
+<section>3.026083700</section>
+<section>192.168.1.25</section>
+<section>8.8.4.4</section>
+<section>UDP</section>
+<section>77</section>
+<section>60677 → 443 Len=35</section>
+</packet>
+
+<packet>
+<section>74</section>
+<section>3.026322900</section>
+<section>8.8.8.8</section>
+<section>192.168.1.25</section>
+<section>UDP</section>
+<section>632</section>
+<section>443 → 49993 Len=590</section>
+</packet>
+
+<packet>
+<section>75</section>
+<section>3.026380400</section>
+<section>8.8.8.8</section>
+<section>192.168.1.25</section>
+<section>UDP</section>
+<section>64</section>
+<section>443 → 49993 Len=22</section>
+</packet>
+
+<packet>
+<section>76</section>
+<section>3.026431000</section>
+<section>192.168.1.25</section>
+<section>8.8.8.8</section>
+<section>UDP</section>
+<section>77</section>
+<section>49993 → 443 Len=35</section>
+</packet>
+
+<packet>
+<section>77</section>
+<section>3.027203600</section>
+<section>8.8.4.4</section>
+<section>192.168.1.25</section>
+<section>UDP</section>
+<section>631</section>
+<section>443 → 63906 Len=589</section>
+</packet>
+
+<packet>
+<section>78</section>
+<section>3.027264300</section>
+<section>8.8.4.4</section>
+<section>192.168.1.25</section>
+<section>UDP</section>
+<section>64</section>
+<section>443 → 63906 Len=22</section>
+</packet>
+
+<packet>
+<section>79</section>
+<section>3.027310600</section>
+<section>192.168.1.25</section>
+<section>8.8.4.4</section>
+<section>UDP</section>
+<section>77</section>
+<section>63906 → 443 Len=35</section>
+</packet>
+
+<packet>
+<section>80</section>
+<section>3.027705100</section>
+<section>8.8.8.8</section>
+<section>192.168.1.25</section>
+<section>UDP</section>
+<section>631</section>
+<section>443 → 63317 Len=589</section>
+</packet>
+
+<packet>
+<section>81</section>
+<section>3.028182100</section>
+<section>8.8.8.8</section>
+<section>192.168.1.25</section>
+<section>UDP</section>
+<section>64</section>
+<section>443 → 63317 Len=22</section>
+</packet>
+
+<packet>
+<section>82</section>
+<section>3.028231500</section>
+<section>192.168.1.25</section>
+<section>8.8.8.8</section>
+<section>UDP</section>
+<section>77</section>
+<section>63317 → 443 Len=35</section>
+</packet>
+
+<packet>
+<section>83</section>
+<section>3.067734000</section>
+<section>8.8.4.4</section>
+<section>192.168.1.25</section>
+<section>UDP</section>
+<section>66</section>
+<section>443 → 60677 Len=24</section>
+</packet>
+
+<packet>
+<section>84</section>
+<section>3.069694300</section>
+<section>8.8.8.8</section>
+<section>192.168.1.25</section>
+<section>UDP</section>
+<section>66</section>
+<section>443 → 49993 Len=24</section>
+</packet>
+
+<packet>
+<section>85</section>
+<section>3.070187200</section>
+<section>8.8.8.8</section>
+<section>192.168.1.25</section>
+<section>UDP</section>
+<section>66</section>
+<section>443 → 63317 Len=24</section>
+</packet>
+
+<packet>
+<section>86</section>
+<section>3.070472800</section>
+<section>8.8.4.4</section>
+<section>192.168.1.25</section>
+<section>UDP</section>
+<section>66</section>
+<section>443 → 63906 Len=24</section>
+</packet>
+
+<packet>
+<section>87</section>
+<section>3.195289400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>108</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>88</section>
+<section>3.195437500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>TLSv1.2</section>
+<section>196</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>89</section>
+<section>3.195558200</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>8082 → 23745 [ACK] Seq=1 Ack=192 Win=83 Len=0</section>
+</packet>
+
+<packet>
+<section>90</section>
+<section>3.195566100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>TCP</section>
+<section>54</section>
+<section>[TCP Dup ACK 88#1] 23745 → 8082 [ACK] Seq=334 Ack=55 Win=514 Len=0</section>
+</packet>
+
+<packet>
+<section>91</section>
+<section>3.423768000</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>8082 → 23745 [ACK] Seq=55 Ack=334 Win=83 Len=0</section>
+</packet>
+
+<packet>
+<section>92</section>
+<section>3.638815700</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>371</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>93</section>
+<section>3.639387100</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>66</section>
+<section>42791 → 443 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 WS=256 SACK_PERM</section>
+</packet>
+
+<packet>
+<section>94</section>
+<section>3.658157100</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>66</section>
+<section>443 → 42791 [SYN, ACK] Seq=0 Ack=1 Win=65535 Len=0 MSS=1400 SACK_PERM WS=8192</section>
+</packet>
+
+<packet>
+<section>95</section>
+<section>3.658226600</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>54</section>
+<section>42791 → 443 [ACK] Seq=1 Ack=1 Win=131584 Len=0</section>
+</packet>
+
+<packet>
+<section>96</section>
+<section>3.658400700</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TLSv1.2</section>
+<section>428</section>
+<section>Client Hello (SNI=api.polargrizzly.com)</section>
+</packet>
+
+<packet>
+<section>97</section>
+<section>3.677061500</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 42791 [ACK] Seq=1 Ack=375 Win=131072 Len=0</section>
+</packet>
+
+<packet>
+<section>98</section>
+<section>3.677866800</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>169</section>
+<section>Server Hello, Change Cipher Spec, Encrypted Handshake Message</section>
+</packet>
+
+<packet>
+<section>99</section>
+<section>3.678736000</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TLSv1.2</section>
+<section>862</section>
+<section>Change Cipher Spec, Encrypted Handshake Message, Application Data</section>
+</packet>
+
+<packet>
+<section>100</section>
+<section>3.692389700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>TCP</section>
+<section>54</section>
+<section>23745 → 8082 [ACK] Seq=334 Ack=372 Win=512 Len=0</section>
+</packet>
+
+<packet>
+<section>101</section>
+<section>3.697431300</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>108</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>102</section>
+<section>3.697586100</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TLSv1.2</section>
+<section>353</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>103</section>
+<section>3.757212100</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 42791 [ACK] Seq=170 Ack=1482 Win=131072 Len=0</section>
+</packet>
+
+<packet>
+<section>104</section>
+<section>3.848054300</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>190</section>
+<section>Handshake Initiation, sender=0x2D8742A9</section>
+</packet>
+
+<packet>
+<section>105</section>
+<section>3.848337400</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>850</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>106</section>
+<section>3.849304700</section>
+<section>104.17.95.48</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>85</section>
+<section>Encrypted Alert</section>
+</packet>
+
+<packet>
+<section>107</section>
+<section>3.849347200</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>54</section>
+<section>42791 → 443 [ACK] Seq=1482 Ack=998 Win=130560 Len=0</section>
+</packet>
+
+<packet>
+<section>108</section>
+<section>3.849684000</section>
+<section>192.168.1.25</section>
+<section>104.17.95.48</section>
+<section>TCP</section>
+<section>54</section>
+<section>42791 → 443 [RST, ACK] Seq=1482 Ack=998 Win=0 Len=0</section>
+</packet>
+
+<packet>
+<section>109</section>
+<section>3.856049600</section>
+<section>192.168.1.25</section>
+<section>224.0.0.22</section>
+<section>IGMPv3</section>
+<section>54</section>
+<section>Membership Report / Leave group 224.0.0.252</section>
+</packet>
+
+<packet>
+<section>110</section>
+<section>3.873520900</section>
+<section>192.168.1.25</section>
+<section>224.0.0.22</section>
+<section>IGMPv3</section>
+<section>54</section>
+<section>Membership Report / Join group 224.0.0.252 for any sources</section>
+</packet>
+
+<packet>
+<section>111</section>
+<section>3.874086600</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>81</section>
+<section>Standard query 0x0000 ANY DESKTOP-6IJFM34.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>112</section>
+<section>3.874290700</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>91</section>
+<section>Standard query response 0x0000 A 192.168.1.25</section>
+</packet>
+
+<packet>
+<section>113</section>
+<section>3.874529300</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>81</section>
+<section>Standard query 0x0000 ANY DESKTOP-6IJFM34.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>114</section>
+<section>3.874730300</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>91</section>
+<section>Standard query response 0x0000 A 192.168.1.25</section>
+</packet>
+
+<packet>
+<section>115</section>
+<section>4.036864600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>134</section>
+<section>Handshake Response, sender=0x0CCF4767, receiver=0x2D8742A9</section>
+</packet>
+
+<packet>
+<section>116</section>
+<section>4.037317500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>74</section>
+<section>Keepalive, receiver=0x0CCF4767, counter=0</section>
+</packet>
+
+<packet>
+<section>117</section>
+<section>4.037317500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=1, datalen=48</section>
+</packet>
+
+<packet>
+<section>118</section>
+<section>4.037317500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=2, datalen=48</section>
+</packet>
+
+<packet>
+<section>119</section>
+<section>4.037317500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=3, datalen=48</section>
+</packet>
+
+<packet>
+<section>120</section>
+<section>4.037317500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=4, datalen=48</section>
+</packet>
+
+<packet>
+<section>121</section>
+<section>4.037317500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=5, datalen=48</section>
+</packet>
+
+<packet>
+<section>122</section>
+<section>4.037317500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=6, datalen=80</section>
+</packet>
+
+<packet>
+<section>123</section>
+<section>4.037317500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=7, datalen=80</section>
+</packet>
+
+<packet>
+<section>124</section>
+<section>4.037317500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=8, datalen=64</section>
+</packet>
+
+<packet>
+<section>125</section>
+<section>4.037317500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=9, datalen=80</section>
+</packet>
+
+<packet>
+<section>126</section>
+<section>4.037317500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=10, datalen=80</section>
+</packet>
+
+<packet>
+<section>127</section>
+<section>4.084925200</section>
+<section>192.168.1.25</section>
+<section>224.0.0.22</section>
+<section>IGMPv3</section>
+<section>54</section>
+<section>Membership Report / Join group 224.0.0.252 for any sources</section>
+</packet>
+
+<packet>
+<section>128</section>
+<section>4.085021400</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=11, datalen=64</section>
+</packet>
+
+<packet>
+<section>129</section>
+<section>4.124900200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=12, datalen=80</section>
+</packet>
+
+<packet>
+<section>130</section>
+<section>4.171817300</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=13, datalen=64</section>
+</packet>
+
+<packet>
+<section>131</section>
+<section>4.181218000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=14, datalen=80</section>
+</packet>
+
+<packet>
+<section>132</section>
+<section>4.181241700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=16, datalen=64</section>
+</packet>
+
+<packet>
+<section>133</section>
+<section>4.181251700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=15, datalen=64</section>
+</packet>
+
+<packet>
+<section>134</section>
+<section>4.227198800</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>74</section>
+<section>Keepalive, receiver=0x2D8742A9, counter=0</section>
+</packet>
+
+<packet>
+<section>135</section>
+<section>4.281858200</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.23? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>136</section>
+<section>4.328310600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>298</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=1, datalen=224</section>
+</packet>
+
+<packet>
+<section>137</section>
+<section>4.329090900</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=17, datalen=64</section>
+</packet>
+
+<packet>
+<section>138</section>
+<section>4.366096700</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=2, datalen=64</section>
+</packet>
+
+<packet>
+<section>139</section>
+<section>4.366334900</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=18, datalen=48</section>
+</packet>
+
+<packet>
+<section>140</section>
+<section>4.366649100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>490</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=19, datalen=416</section>
+</packet>
+
+<packet>
+<section>141</section>
+<section>4.372595900</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>250</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=3, datalen=176</section>
+</packet>
+
+<packet>
+<section>142</section>
+<section>4.372685300</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>186</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=4, datalen=112</section>
+</packet>
+
+<packet>
+<section>143</section>
+<section>4.372772900</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>170</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=5, datalen=96</section>
+</packet>
+
+<packet>
+<section>144</section>
+<section>4.373331400</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=20, datalen=64</section>
+</packet>
+
+<packet>
+<section>145</section>
+<section>4.373356800</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=21, datalen=64</section>
+</packet>
+
+<packet>
+<section>146</section>
+<section>4.373367600</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=22, datalen=64</section>
+</packet>
+
+<packet>
+<section>147</section>
+<section>4.504383700</section>
+<section>192.168.1.21</section>
+<section>255.255.255.255</section>
+<section>UDP</section>
+<section>303</section>
+<section>55472 → 6667 Len=261</section>
+</packet>
+
+<packet>
+<section>148</section>
+<section>4.528631400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=6, datalen=64</section>
+</packet>
+
+<packet>
+<section>149</section>
+<section>4.528917900</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=23, datalen=48</section>
+</packet>
+
+<packet>
+<section>150</section>
+<section>4.528940600</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>234</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=24, datalen=160</section>
+</packet>
+
+<packet>
+<section>151</section>
+<section>4.567208800</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=7, datalen=48</section>
+</packet>
+
+<packet>
+<section>152</section>
+<section>4.568751200</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>234</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=8, datalen=160</section>
+</packet>
+
+<packet>
+<section>153</section>
+<section>4.569808400</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>1482</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=25, datalen=1408</section>
+</packet>
+
+<packet>
+<section>154</section>
+<section>4.572868100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=9, datalen=64</section>
+</packet>
+
+<packet>
+<section>155</section>
+<section>4.574075400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=10, datalen=64</section>
+</packet>
+
+<packet>
+<section>156</section>
+<section>4.574446600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=11, datalen=64</section>
+</packet>
+
+<packet>
+<section>157</section>
+<section>4.576295100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=26, datalen=64</section>
+</packet>
+
+<packet>
+<section>158</section>
+<section>4.576659300</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=27, datalen=64</section>
+</packet>
+
+<packet>
+<section>159</section>
+<section>4.699617500</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=12, datalen=64</section>
+</packet>
+
+<packet>
+<section>160</section>
+<section>4.699757500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=28, datalen=64</section>
+</packet>
+
+<packet>
+<section>161</section>
+<section>4.711456400</section>
+<section>192.168.1.25</section>
+<section>13.227.207.80</section>
+<section>TLSv1.2</section>
+<section>740</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>162</section>
+<section>4.719063700</section>
+<section>192.168.1.30</section>
+<section>255.255.255.255</section>
+<section>UDP</section>
+<section>303</section>
+<section>62340 → 6667 Len=261</section>
+</packet>
+
+<packet>
+<section>163</section>
+<section>4.723706800</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>0xfffa</section>
+<section>100</section>
+<section>Ethernet II</section>
+</packet>
+
+<packet>
+<section>164</section>
+<section>4.726782600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=13, datalen=48</section>
+</packet>
+
+<packet>
+<section>165</section>
+<section>4.729064600</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 23733 [ACK] Seq=1376 Ack=1617 Win=169 Len=0</section>
+</packet>
+
+<packet>
+<section>166</section>
+<section>4.729361800</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>108</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>167</section>
+<section>4.729480700</section>
+<section>192.168.1.25</section>
+<section>13.227.207.80</section>
+<section>TLSv1.2</section>
+<section>318</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>168</section>
+<section>4.738184200</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>314</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=14, datalen=240</section>
+</packet>
+
+<packet>
+<section>169</section>
+<section>4.738184200</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=15, datalen=48</section>
+</packet>
+
+<packet>
+<section>170</section>
+<section>4.738278900</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=29, datalen=48</section>
+</packet>
+
+<packet>
+<section>171</section>
+<section>4.738300200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=30, datalen=48</section>
+</packet>
+
+<packet>
+<section>172</section>
+<section>4.769003600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>170</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=16, datalen=96</section>
+</packet>
+
+<packet>
+<section>173</section>
+<section>4.769253300</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>378</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=31, datalen=304</section>
+</packet>
+
+<packet>
+<section>174</section>
+<section>4.774657500</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=17, datalen=64</section>
+</packet>
+
+<packet>
+<section>175</section>
+<section>4.774794600</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=32, datalen=48</section>
+</packet>
+
+<packet>
+<section>176</section>
+<section>4.775024400</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>490</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=33, datalen=416</section>
+</packet>
+
+<packet>
+<section>177</section>
+<section>4.775138400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=18, datalen=64</section>
+</packet>
+
+<packet>
+<section>178</section>
+<section>4.775255200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=34, datalen=48</section>
+</packet>
+
+<packet>
+<section>179</section>
+<section>4.775467900</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>490</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=35, datalen=416</section>
+</packet>
+
+<packet>
+<section>180</section>
+<section>4.799742000</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 23733 [ACK] Seq=1430 Ack=1881 Win=172 Len=0</section>
+</packet>
+
+<packet>
+<section>181</section>
+<section>4.895144500</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>1341</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>182</section>
+<section>4.895144500</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>88</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>183</section>
+<section>4.895194300</section>
+<section>192.168.1.25</section>
+<section>13.227.207.80</section>
+<section>TCP</section>
+<section>54</section>
+<section>23733 → 443 [ACK] Seq=1881 Ack=2751 Win=514 Len=0</section>
+</packet>
+
+<packet>
+<section>184</section>
+<section>4.931657500</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=19, datalen=48</section>
+</packet>
+
+<packet>
+<section>185</section>
+<section>4.931801100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=36, datalen=48</section>
+</packet>
+
+<packet>
+<section>186</section>
+<section>4.939480900</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=20, datalen=48</section>
+</packet>
+
+<packet>
+<section>187</section>
+<section>4.976223800</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=21, datalen=48</section>
+</packet>
+
+<packet>
+<section>188</section>
+<section>4.976537500</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=22, datalen=48</section>
+</packet>
+
+<packet>
+<section>189</section>
+<section>4.977406000</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1466</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=23, datalen=1392</section>
+</packet>
+
+<packet>
+<section>190</section>
+<section>4.977518200</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1466</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=24, datalen=1392</section>
+</packet>
+
+<packet>
+<section>191</section>
+<section>4.977518200</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>186</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=25, datalen=112</section>
+</packet>
+
+<packet>
+<section>192</section>
+<section>4.977650400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1434</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=26, datalen=1360</section>
+</packet>
+
+<packet>
+<section>193</section>
+<section>4.977682700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=37, datalen=48</section>
+</packet>
+
+<packet>
+<section>194</section>
+<section>4.977732500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=38, datalen=48</section>
+</packet>
+
+<packet>
+<section>195</section>
+<section>4.978996000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>218</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=39, datalen=144</section>
+</packet>
+
+<packet>
+<section>196</section>
+<section>4.988600100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1466</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=27, datalen=1392</section>
+</packet>
+
+<packet>
+<section>197</section>
+<section>4.988710400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1466</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=28, datalen=1392</section>
+</packet>
+
+<packet>
+<section>198</section>
+<section>4.988710400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>186</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=29, datalen=112</section>
+</packet>
+
+<packet>
+<section>199</section>
+<section>4.988838300</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=40, datalen=48</section>
+</packet>
+
+<packet>
+<section>200</section>
+<section>4.988845600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1434</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=30, datalen=1360</section>
+</packet>
+
+<packet>
+<section>201</section>
+<section>4.988904500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=41, datalen=48</section>
+</packet>
+
+<packet>
+<section>202</section>
+<section>4.990407900</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>218</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=42, datalen=144</section>
+</packet>
+
+<packet>
+<section>203</section>
+<section>4.995834600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>730</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=31, datalen=656</section>
+</packet>
+
+<packet>
+<section>204</section>
+<section>4.995834600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=32, datalen=80</section>
+</packet>
+
+<packet>
+<section>205</section>
+<section>4.995905800</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=33, datalen=48</section>
+</packet>
+
+<packet>
+<section>206</section>
+<section>4.996068400</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=43, datalen=48</section>
+</packet>
+
+<packet>
+<section>207</section>
+<section>4.996323600</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=44, datalen=48</section>
+</packet>
+
+<packet>
+<section>208</section>
+<section>5.000647000</section>
+<section>192.168.1.29</section>
+<section>255.255.255.255</section>
+<section>UDP</section>
+<section>303</section>
+<section>63783 → 6667 Len=261</section>
+</packet>
+
+<packet>
+<section>209</section>
+<section>5.053159000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=45, datalen=64</section>
+</packet>
+
+<packet>
+<section>210</section>
+<section>5.053159000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=46, datalen=64</section>
+</packet>
+
+<packet>
+<section>211</section>
+<section>5.053184200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=47, datalen=64</section>
+</packet>
+
+<packet>
+<section>212</section>
+<section>5.179810600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>378</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=34, datalen=304</section>
+</packet>
+
+<packet>
+<section>213</section>
+<section>5.180759100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>890</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=48, datalen=816</section>
+</packet>
+
+<packet>
+<section>214</section>
+<section>5.192011400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>378</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=35, datalen=304</section>
+</packet>
+
+<packet>
+<section>215</section>
+<section>5.192764900</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>874</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=49, datalen=800</section>
+</packet>
+
+<packet>
+<section>216</section>
+<section>5.252967900</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=36, datalen=64</section>
+</packet>
+
+<packet>
+<section>217</section>
+<section>5.253165100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=37, datalen=64</section>
+</packet>
+
+<packet>
+<section>218</section>
+<section>5.253420400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=38, datalen=64</section>
+</packet>
+
+<packet>
+<section>219</section>
+<section>5.279806200</section>
+<section>192.168.1.25</section>
+<section>224.0.0.22</section>
+<section>IGMPv3</section>
+<section>54</section>
+<section>Membership Report / Leave group 224.168.100.1</section>
+</packet>
+
+<packet>
+<section>220</section>
+<section>5.373822600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>170</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=39, datalen=96</section>
+</packet>
+
+<packet>
+<section>221</section>
+<section>5.374864500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>1386</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=50, datalen=1312</section>
+</packet>
+
+<packet>
+<section>222</section>
+<section>5.388560500</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>170</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=40, datalen=96</section>
+</packet>
+
+<packet>
+<section>223</section>
+<section>5.388766700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>410</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=51, datalen=336</section>
+</packet>
+
+<packet>
+<section>224</section>
+<section>5.567603500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=52, datalen=80</section>
+</packet>
+
+<packet>
+<section>225</section>
+<section>5.591043600</section>
+<section>192.168.1.25</section>
+<section>224.0.0.22</section>
+<section>IGMPv3</section>
+<section>54</section>
+<section>Membership Report / Leave group 224.168.100.1</section>
+</packet>
+
+<packet>
+<section>226</section>
+<section>5.591446100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>922</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=41, datalen=848</section>
+</packet>
+
+<packet>
+<section>227</section>
+<section>5.591446100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=42, datalen=80</section>
+</packet>
+
+<packet>
+<section>228</section>
+<section>5.591574700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=53, datalen=48</section>
+</packet>
+
+<packet>
+<section>229</section>
+<section>5.591600400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=43, datalen=48</section>
+</packet>
+
+<packet>
+<section>230</section>
+<section>5.591649000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=54, datalen=48</section>
+</packet>
+
+<packet>
+<section>231</section>
+<section>5.591833000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=55, datalen=48</section>
+</packet>
+
+<packet>
+<section>232</section>
+<section>5.595632100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>922</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=44, datalen=848</section>
+</packet>
+
+<packet>
+<section>233</section>
+<section>5.595632100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=45, datalen=80</section>
+</packet>
+
+<packet>
+<section>234</section>
+<section>5.595701700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=56, datalen=48</section>
+</packet>
+
+<packet>
+<section>235</section>
+<section>5.596079600</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=57, datalen=48</section>
+</packet>
+
+<packet>
+<section>236</section>
+<section>5.606993800</section>
+<section>192.168.1.25</section>
+<section>224.0.0.22</section>
+<section>IGMPv3</section>
+<section>54</section>
+<section>Membership Report / Join group 224.168.100.1 for any sources</section>
+</packet>
+
+<packet>
+<section>237</section>
+<section>5.643760200</section>
+<section>192.168.1.25</section>
+<section>13.227.207.80</section>
+<section>TLSv1.2</section>
+<section>740</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>238</section>
+<section>5.663178200</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 23733 [ACK] Seq=2751 Ack=2567 Win=175 Len=0</section>
+</packet>
+
+<packet>
+<section>239</section>
+<section>5.664451700</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>108</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>240</section>
+<section>5.664589200</section>
+<section>192.168.1.25</section>
+<section>13.227.207.80</section>
+<section>TLSv1.2</section>
+<section>332</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>241</section>
+<section>5.729799600</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 23733 [ACK] Seq=2805 Ack=2845 Win=178 Len=0</section>
+</packet>
+
+<packet>
+<section>242</section>
+<section>5.753720300</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>202</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=46, datalen=128</section>
+</packet>
+
+<packet>
+<section>243</section>
+<section>5.754324000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=58, datalen=64</section>
+</packet>
+
+<packet>
+<section>244</section>
+<section>5.967454700</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=47, datalen=64</section>
+</packet>
+
+<packet>
+<section>245</section>
+<section>5.967644400</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=59, datalen=48</section>
+</packet>
+
+<packet>
+<section>246</section>
+<section>5.968040000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>298</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=60, datalen=224</section>
+</packet>
+
+<packet>
+<section>247</section>
+<section>6.063229800</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>1341</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>248</section>
+<section>6.063229800</section>
+<section>13.227.207.80</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>88</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>249</section>
+<section>6.063282700</section>
+<section>192.168.1.25</section>
+<section>13.227.207.80</section>
+<section>TCP</section>
+<section>54</section>
+<section>23733 → 443 [ACK] Seq=2845 Ack=4126 Win=508 Len=0</section>
+</packet>
+
+<packet>
+<section>250</section>
+<section>6.088365500</section>
+<section>192.168.1.25</section>
+<section>224.0.0.22</section>
+<section>IGMPv3</section>
+<section>54</section>
+<section>Membership Report / Join group 224.168.100.1 for any sources</section>
+</packet>
+
+<packet>
+<section>251</section>
+<section>6.177976400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1494</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=48, datalen=1420</section>
+</packet>
+
+<packet>
+<section>252</section>
+<section>6.177976400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>202</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=49, datalen=128</section>
+</packet>
+
+<packet>
+<section>253</section>
+<section>6.178088600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1494</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=50, datalen=1420</section>
+</packet>
+
+<packet>
+<section>254</section>
+<section>6.178088600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>202</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=51, datalen=128</section>
+</packet>
+
+<packet>
+<section>255</section>
+<section>6.178163500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=61, datalen=48</section>
+</packet>
+
+<packet>
+<section>256</section>
+<section>6.178182200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=62, datalen=48</section>
+</packet>
+
+<packet>
+<section>257</section>
+<section>6.178226600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1494</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=52, datalen=1420</section>
+</packet>
+
+<packet>
+<section>258</section>
+<section>6.178226600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>202</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=53, datalen=128</section>
+</packet>
+
+<packet>
+<section>259</section>
+<section>6.178299500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=63, datalen=48</section>
+</packet>
+
+<packet>
+<section>260</section>
+<section>6.178365100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1494</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=54, datalen=1420</section>
+</packet>
+
+<packet>
+<section>261</section>
+<section>6.178365100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>202</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=55, datalen=128</section>
+</packet>
+
+<packet>
+<section>262</section>
+<section>6.178431100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=64, datalen=48</section>
+</packet>
+
+<packet>
+<section>263</section>
+<section>6.288840100</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.25? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>264</section>
+<section>6.288850900</section>
+<section>GigaByteTech_f2:94:dc</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>ARP</section>
+<section>42</section>
+<section>192.168.1.25 is at 74:56:3c:f2:94:dc</section>
+</packet>
+
+<packet>
+<section>265</section>
+<section>6.294786300</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.30? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>266</section>
+<section>6.380795600</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.29? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>267</section>
+<section>6.399918400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>506</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=56, datalen=432</section>
+</packet>
+
+<packet>
+<section>268</section>
+<section>6.401898700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>282</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=65, datalen=208</section>
+</packet>
+
+<packet>
+<section>269</section>
+<section>6.482811900</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.26? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>270</section>
+<section>6.611228800</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>170</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=57, datalen=96</section>
+</packet>
+
+<packet>
+<section>271</section>
+<section>6.612670100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>474</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=66, datalen=400</section>
+</packet>
+
+<packet>
+<section>272</section>
+<section>6.612734000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>1494</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=67, datalen=1420</section>
+</packet>
+
+<packet>
+<section>273</section>
+<section>6.612734000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=68, datalen=80</section>
+</packet>
+
+<packet>
+<section>274</section>
+<section>6.612781200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>362</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=69, datalen=288</section>
+</packet>
+
+<packet>
+<section>275</section>
+<section>6.799710100</section>
+<section>172.172.255.216</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>205</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>276</section>
+<section>6.820320100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=58, datalen=48</section>
+</packet>
+
+<packet>
+<section>277</section>
+<section>6.820320100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=59, datalen=48</section>
+</packet>
+
+<packet>
+<section>278</section>
+<section>6.820537600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>394</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=60, datalen=320</section>
+</packet>
+
+<packet>
+<section>279</section>
+<section>6.823701700</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>218</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=61, datalen=144</section>
+</packet>
+
+<packet>
+<section>280</section>
+<section>6.823751700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=70, datalen=48</section>
+</packet>
+
+<packet>
+<section>281</section>
+<section>6.824296100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>298</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=62, datalen=224</section>
+</packet>
+
+<packet>
+<section>282</section>
+<section>6.829532400</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>346</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=71, datalen=272</section>
+</packet>
+
+<packet>
+<section>283</section>
+<section>6.829823100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>394</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=72, datalen=320</section>
+</packet>
+
+<packet>
+<section>284</section>
+<section>7.013820200</section>
+<section>172.172.255.216</section>
+<section>192.168.1.25</section>
+<section>TLSv1.2</section>
+<section>205</section>
+<section>Application Data</section>
+</packet>
+
+<packet>
+<section>285</section>
+<section>7.037365900</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>218</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=63, datalen=144</section>
+</packet>
+
+<packet>
+<section>286</section>
+<section>7.038674900</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>298</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=64, datalen=224</section>
+</packet>
+
+<packet>
+<section>287</section>
+<section>7.038819300</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=73, datalen=48</section>
+</packet>
+
+<packet>
+<section>288</section>
+<section>7.109012100</section>
+<section>172.172.255.216</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>356</section>
+<section>[TCP Retransmission] 443 → 25505 [PSH, ACK] Seq=1 Ack=1 Win=7458 Len=302</section>
+</packet>
+
+<packet>
+<section>289</section>
+<section>7.277347100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=74, datalen=64</section>
+</packet>
+
+<packet>
+<section>290</section>
+<section>7.421689400</section>
+<section>172.172.255.216</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>356</section>
+<section>[TCP Retransmission] 443 → 25505 [PSH, ACK] Seq=1 Ack=1 Win=7458 Len=302</section>
+</packet>
+
+<packet>
+<section>291</section>
+<section>7.478797400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=65, datalen=80</section>
+</packet>
+
+<packet>
+<section>292</section>
+<section>7.515541500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>170</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=75, datalen=96</section>
+</packet>
+
+<packet>
+<section>293</section>
+<section>7.696702200</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>0xfffa</section>
+<section>100</section>
+<section>Ethernet II</section>
+</packet>
+
+<packet>
+<section>294</section>
+<section>7.719732500</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>186</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=66, datalen=112</section>
+</packet>
+
+<packet>
+<section>295</section>
+<section>8.031069800</section>
+<section>172.172.255.216</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>356</section>
+<section>[TCP Retransmission] 443 → 25505 [PSH, ACK] Seq=1 Ack=1 Win=7458 Len=302</section>
+</packet>
+
+<packet>
+<section>296</section>
+<section>8.391918100</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>82</section>
+<section>Standard query 0x0000 PTR _googlecast._tcp.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>297</section>
+<section>8.392031800</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=76, datalen=80</section>
+</packet>
+
+<packet>
+<section>298</section>
+<section>8.392040500</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>82</section>
+<section>Standard query 0x0000 PTR _googlecast._tcp.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>299</section>
+<section>8.392101200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=77, datalen=80</section>
+</packet>
+
+<packet>
+<section>300</section>
+<section>8.489803700</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.26? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>301</section>
+<section>8.550512200</section>
+<section>fe80::8606:faff:fe31:3458</section>
+<section>ff02::1</section>
+<section>ICMPv6</section>
+<section>182</section>
+<section>Router Advertisement from 84:06:fa:31:34:58</section>
+</packet>
+
+<packet>
+<section>302</section>
+<section>9.096676000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=78, datalen=80</section>
+</packet>
+
+<packet>
+<section>303</section>
+<section>9.096771500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=79, datalen=64</section>
+</packet>
+
+<packet>
+<section>304</section>
+<section>9.096916700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=80, datalen=64</section>
+</packet>
+
+<packet>
+<section>305</section>
+<section>9.097004100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=81, datalen=64</section>
+</packet>
+
+<packet>
+<section>306</section>
+<section>9.234307400</section>
+<section>172.172.255.216</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>356</section>
+<section>[TCP Retransmission] 443 → 25505 [PSH, ACK] Seq=1 Ack=1 Win=7458 Len=302</section>
+</packet>
+
+<packet>
+<section>307</section>
+<section>9.282863500</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>410</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=67, datalen=336</section>
+</packet>
+
+<packet>
+<section>308</section>
+<section>9.284128100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>1354</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=82, datalen=1280</section>
+</packet>
+
+<packet>
+<section>309</section>
+<section>9.284142000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>1354</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=83, datalen=1280</section>
+</packet>
+
+<packet>
+<section>310</section>
+<section>9.289131400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>282</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=68, datalen=208</section>
+</packet>
+
+<packet>
+<section>311</section>
+<section>9.289599600</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=84, datalen=64</section>
+</packet>
+
+<packet>
+<section>312</section>
+<section>9.359076700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=85, datalen=64</section>
+</packet>
+
+<packet>
+<section>313</section>
+<section>9.405010700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>1354</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=86, datalen=1280</section>
+</packet>
+
+<packet>
+<section>314</section>
+<section>9.479878800</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=69, datalen=80</section>
+</packet>
+
+<packet>
+<section>315</section>
+<section>9.479993800</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1354</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=70, datalen=1280</section>
+</packet>
+
+<packet>
+<section>316</section>
+<section>9.489807500</section>
+<section>192.168.1.21</section>
+<section>255.255.255.255</section>
+<section>UDP</section>
+<section>303</section>
+<section>55472 → 6667 Len=261</section>
+</packet>
+
+<packet>
+<section>317</section>
+<section>9.496378400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1354</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=71, datalen=1280</section>
+</packet>
+
+<packet>
+<section>318</section>
+<section>9.496421500</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>378</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=72, datalen=304</section>
+</packet>
+
+<packet>
+<section>319</section>
+<section>9.496886000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>234</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=87, datalen=160</section>
+</packet>
+
+<packet>
+<section>320</section>
+<section>9.496917500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>186</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=88, datalen=112</section>
+</packet>
+
+<packet>
+<section>321</section>
+<section>9.503446000</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=73, datalen=64</section>
+</packet>
+
+<packet>
+<section>322</section>
+<section>9.503525800</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=89, datalen=48</section>
+</packet>
+
+<packet>
+<section>323</section>
+<section>9.503868700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>1494</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=90, datalen=1420</section>
+</packet>
+
+<packet>
+<section>324</section>
+<section>9.503868700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>554</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=91, datalen=480</section>
+</packet>
+
+<packet>
+<section>325</section>
+<section>9.606158500</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1354</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=74, datalen=1280</section>
+</packet>
+
+<packet>
+<section>326</section>
+<section>9.606420800</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>282</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=92, datalen=208</section>
+</packet>
+
+<packet>
+<section>327</section>
+<section>9.687206600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>410</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=75, datalen=336</section>
+</packet>
+
+<packet>
+<section>328</section>
+<section>9.687206600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>170</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=76, datalen=96</section>
+</packet>
+
+<packet>
+<section>329</section>
+<section>9.687262700</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=77, datalen=64</section>
+</packet>
+
+<packet>
+<section>330</section>
+<section>9.687262700</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>186</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=78, datalen=112</section>
+</packet>
+
+<packet>
+<section>331</section>
+<section>9.687523400</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=93, datalen=64</section>
+</packet>
+
+<packet>
+<section>332</section>
+<section>9.687548200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=94, datalen=64</section>
+</packet>
+
+<packet>
+<section>333</section>
+<section>9.717514400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=79, datalen=48</section>
+</packet>
+
+<packet>
+<section>334</section>
+<section>9.717973800</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1494</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=80, datalen=1420</section>
+</packet>
+
+<packet>
+<section>335</section>
+<section>9.718097300</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1494</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=81, datalen=1420</section>
+</packet>
+
+<packet>
+<section>336</section>
+<section>9.718158500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=95, datalen=48</section>
+</packet>
+
+<packet>
+<section>337</section>
+<section>9.718212900</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1450</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=82, datalen=1376</section>
+</packet>
+
+<packet>
+<section>338</section>
+<section>9.718334800</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1494</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=83, datalen=1420</section>
+</packet>
+
+<packet>
+<section>339</section>
+<section>9.718396000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=96, datalen=48</section>
+</packet>
+
+<packet>
+<section>340</section>
+<section>9.718457700</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1494</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=84, datalen=1420</section>
+</packet>
+
+<packet>
+<section>341</section>
+<section>9.718576600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1494</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=85, datalen=1420</section>
+</packet>
+
+<packet>
+<section>342</section>
+<section>9.718626600</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=97, datalen=48</section>
+</packet>
+
+<packet>
+<section>343</section>
+<section>9.718698200</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1494</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=86, datalen=1420</section>
+</packet>
+
+<packet>
+<section>344</section>
+<section>9.718748900</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>506</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=87, datalen=432</section>
+</packet>
+
+<packet>
+<section>345</section>
+<section>9.718787400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>474</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=88, datalen=400</section>
+</packet>
+
+<packet>
+<section>346</section>
+<section>9.718804500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=98, datalen=48</section>
+</packet>
+
+<packet>
+<section>347</section>
+<section>9.720098300</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>202</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=99, datalen=128</section>
+</packet>
+
+<packet>
+<section>348</section>
+<section>9.720304100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>218</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=100, datalen=144</section>
+</packet>
+
+<packet>
+<section>349</section>
+<section>9.720315000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>554</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=101, datalen=480</section>
+</packet>
+
+<packet>
+<section>350</section>
+<section>9.720350600</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>1494</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=102, datalen=1420</section>
+</packet>
+
+<packet>
+<section>351</section>
+<section>9.720350600</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>810</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=103, datalen=736</section>
+</packet>
+
+<packet>
+<section>352</section>
+<section>9.720988400</section>
+<section>192.168.1.30</section>
+<section>255.255.255.255</section>
+<section>UDP</section>
+<section>303</section>
+<section>62340 → 6667 Len=261</section>
+</packet>
+
+<packet>
+<section>353</section>
+<section>9.826180100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=89, datalen=64</section>
+</packet>
+
+<packet>
+<section>354</section>
+<section>9.935467400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=90, datalen=48</section>
+</packet>
+
+<packet>
+<section>355</section>
+<section>9.935467400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>426</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=91, datalen=352</section>
+</packet>
+
+<packet>
+<section>356</section>
+<section>9.935522100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>426</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=92, datalen=352</section>
+</packet>
+
+<packet>
+<section>357</section>
+<section>9.935522100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>202</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=93, datalen=128</section>
+</packet>
+
+<packet>
+<section>358</section>
+<section>9.935622200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=104, datalen=48</section>
+</packet>
+
+<packet>
+<section>359</section>
+<section>9.935726200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=105, datalen=80</section>
+</packet>
+
+<packet>
+<section>360</section>
+<section>9.939255400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1226</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=94, datalen=1152</section>
+</packet>
+
+<packet>
+<section>361</section>
+<section>9.939311500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=106, datalen=48</section>
+</packet>
+
+<packet>
+<section>362</section>
+<section>9.999798300</section>
+<section>192.168.1.29</section>
+<section>255.255.255.255</section>
+<section>UDP</section>
+<section>303</section>
+<section>63783 → 6667 Len=261</section>
+</packet>
+
+<packet>
+<section>363</section>
+<section>10.026968900</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=107, datalen=64</section>
+</packet>
+
+<packet>
+<section>364</section>
+<section>10.103632900</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=108, datalen=64</section>
+</packet>
+
+<packet>
+<section>365</section>
+<section>10.103654800</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=109, datalen=64</section>
+</packet>
+
+<packet>
+<section>366</section>
+<section>10.190463200</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=95, datalen=48</section>
+</packet>
+
+<packet>
+<section>367</section>
+<section>10.214564300</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=96, datalen=64</section>
+</packet>
+
+<packet>
+<section>368</section>
+<section>10.367905700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=110, datalen=64</section>
+</packet>
+
+<packet>
+<section>369</section>
+<section>10.381914500</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=97, datalen=48</section>
+</packet>
+
+<packet>
+<section>370</section>
+<section>10.382038300</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=111, datalen=48</section>
+</packet>
+
+<packet>
+<section>371</section>
+<section>10.429189900</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=112, datalen=64</section>
+</packet>
+
+<packet>
+<section>372</section>
+<section>10.643282100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=98, datalen=64</section>
+</packet>
+
+<packet>
+<section>373</section>
+<section>10.669605800</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>0xfffa</section>
+<section>100</section>
+<section>Ethernet II</section>
+</packet>
+
+<packet>
+<section>374</section>
+<section>10.846778100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=113, datalen=64</section>
+</packet>
+
+<packet>
+<section>375</section>
+<section>11.077458100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=99, datalen=64</section>
+</packet>
+
+<packet>
+<section>376</section>
+<section>11.282057600</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=114, datalen=64</section>
+</packet>
+
+<packet>
+<section>377</section>
+<section>11.498206200</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=100, datalen=64</section>
+</packet>
+
+<packet>
+<section>378</section>
+<section>11.624297500</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>82</section>
+<section>Standard query 0x0000 PTR _googlecast._tcp.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>379</section>
+<section>11.624411700</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>82</section>
+<section>Standard query 0x0000 PTR _googlecast._tcp.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>380</section>
+<section>11.624480000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=115, datalen=80</section>
+</packet>
+
+<packet>
+<section>381</section>
+<section>11.624491200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=116, datalen=80</section>
+</packet>
+
+<packet>
+<section>382</section>
+<section>11.640545600</section>
+<section>172.172.255.216</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>356</section>
+<section>[TCP Retransmission] 443 → 25505 [PSH, ACK] Seq=1 Ack=1 Win=7458 Len=302</section>
+</packet>
+
+<packet>
+<section>383</section>
+<section>11.700120800</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=117, datalen=64</section>
+</packet>
+
+<packet>
+<section>384</section>
+<section>11.949522800</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=101, datalen=64</section>
+</packet>
+
+<packet>
+<section>385</section>
+<section>12.109722700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=118, datalen=64</section>
+</packet>
+
+<packet>
+<section>386</section>
+<section>12.156022800</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=119, datalen=64</section>
+</packet>
+
+<packet>
+<section>387</section>
+<section>12.373906900</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=120, datalen=64</section>
+</packet>
+
+<packet>
+<section>388</section>
+<section>12.442284500</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=102, datalen=64</section>
+</packet>
+
+<packet>
+<section>389</section>
+<section>12.604547700</section>
+<section>172.172.255.216</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>60</section>
+<section>443 → 4483 [RST, ACK] Seq=303 Ack=1 Win=0 Len=0</section>
+</packet>
+
+<packet>
+<section>390</section>
+<section>12.627520200</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>82</section>
+<section>Standard query 0x0000 PTR _googlecast._tcp.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>391</section>
+<section>12.627619300</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=121, datalen=80</section>
+</packet>
+
+<packet>
+<section>392</section>
+<section>12.627637400</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>82</section>
+<section>Standard query 0x0000 PTR _googlecast._tcp.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>393</section>
+<section>12.627726700</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=122, datalen=80</section>
+</packet>
+
+<packet>
+<section>394</section>
+<section>12.854295500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=123, datalen=64</section>
+</packet>
+
+<packet>
+<section>395</section>
+<section>13.073282500</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=103, datalen=64</section>
+</packet>
+
+<packet>
+<section>396</section>
+<section>13.642975600</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>0xfffa</section>
+<section>100</section>
+<section>Ethernet II</section>
+</packet>
+
+<packet>
+<section>397</section>
+<section>13.882974300</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=124, datalen=64</section>
+</packet>
+
+<packet>
+<section>398</section>
+<section>14.125207100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=104, datalen=64</section>
+</packet>
+
+<packet>
+<section>399</section>
+<section>14.509228100</section>
+<section>192.168.1.21</section>
+<section>255.255.255.255</section>
+<section>UDP</section>
+<section>303</section>
+<section>55472 → 6667 Len=261</section>
+</packet>
+
+<packet>
+<section>400</section>
+<section>14.629503100</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>82</section>
+<section>Standard query 0x0000 PTR _googlecast._tcp.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>401</section>
+<section>14.629623500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=125, datalen=80</section>
+</packet>
+
+<packet>
+<section>402</section>
+<section>14.629640900</section>
+<section>192.168.1.25</section>
+<section>224.0.0.251</section>
+<section>MDNS</section>
+<section>82</section>
+<section>Standard query 0x0000 PTR _googlecast._tcp.local, &quot;QM&quot; question</section>
+</packet>
+
+<packet>
+<section>403</section>
+<section>14.629778000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=126, datalen=80</section>
+</packet>
+
+<packet>
+<section>404</section>
+<section>14.719095700</section>
+<section>192.168.1.30</section>
+<section>255.255.255.255</section>
+<section>UDP</section>
+<section>303</section>
+<section>62340 → 6667 Len=261</section>
+</packet>
+
+<packet>
+<section>405</section>
+<section>15.001419000</section>
+<section>192.168.1.29</section>
+<section>255.255.255.255</section>
+<section>UDP</section>
+<section>303</section>
+<section>63783 → 6667 Len=261</section>
+</packet>
+
+<packet>
+<section>406</section>
+<section>15.595519000</section>
+<section>fe80::8606:faff:fe31:3458</section>
+<section>ff02::1</section>
+<section>ICMPv6</section>
+<section>182</section>
+<section>Router Advertisement from 84:06:fa:31:34:58</section>
+</packet>
+
+<packet>
+<section>407</section>
+<section>15.610939400</section>
+<section>192.168.1.25</section>
+<section>224.0.0.22</section>
+<section>IGMPv3</section>
+<section>54</section>
+<section>Membership Report / Leave group 224.168.100.1</section>
+</packet>
+
+<packet>
+<section>408</section>
+<section>15.736368400</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=127, datalen=64</section>
+</packet>
+
+<packet>
+<section>409</section>
+<section>15.876002600</section>
+<section>192.168.1.25</section>
+<section>224.0.0.22</section>
+<section>IGMPv3</section>
+<section>54</section>
+<section>Membership Report / Join group 224.168.100.1 for any sources</section>
+</packet>
+
+<packet>
+<section>410</section>
+<section>15.949569500</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=105, datalen=64</section>
+</packet>
+
+<packet>
+<section>411</section>
+<section>16.092669000</section>
+<section>192.168.1.25</section>
+<section>224.0.0.22</section>
+<section>IGMPv3</section>
+<section>54</section>
+<section>Membership Report / Join group 224.168.100.1 for any sources</section>
+</packet>
+
+<packet>
+<section>412</section>
+<section>16.123902500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=128, datalen=64</section>
+</packet>
+
+<packet>
+<section>413</section>
+<section>16.386889600</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=129, datalen=64</section>
+</packet>
+
+<packet>
+<section>414</section>
+<section>16.402362600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=106, datalen=48</section>
+</packet>
+
+<packet>
+<section>415</section>
+<section>16.402509200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=130, datalen=48</section>
+</packet>
+
+<packet>
+<section>416</section>
+<section>16.402663900</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>618</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=131, datalen=544</section>
+</packet>
+
+<packet>
+<section>417</section>
+<section>16.453063900</section>
+<section>172.172.255.216</section>
+<section>192.168.1.25</section>
+<section>TCP</section>
+<section>356</section>
+<section>[TCP Retransmission] 443 → 25505 [PSH, ACK] Seq=1 Ack=1 Win=7458 Len=302</section>
+</packet>
+
+<packet>
+<section>418</section>
+<section>16.615526600</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>0xfffa</section>
+<section>100</section>
+<section>Ethernet II</section>
+</packet>
+
+<packet>
+<section>419</section>
+<section>16.680800300</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=107, datalen=48</section>
+</packet>
+
+<packet>
+<section>420</section>
+<section>16.680866200</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>698</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=108, datalen=624</section>
+</packet>
+
+<packet>
+<section>421</section>
+<section>16.683006800</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>618</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=132, datalen=544</section>
+</packet>
+
+<packet>
+<section>422</section>
+<section>16.961747200</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1418</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=109, datalen=1344</section>
+</packet>
+
+<packet>
+<section>423</section>
+<section>16.961747200</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>346</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=110, datalen=272</section>
+</packet>
+
+<packet>
+<section>424</section>
+<section>16.961891400</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=133, datalen=48</section>
+</packet>
+
+<packet>
+<section>425</section>
+<section>16.975137800</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=134, datalen=64</section>
+</packet>
+
+<packet>
+<section>426</section>
+<section>16.996366800</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>554</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=135, datalen=480</section>
+</packet>
+
+<packet>
+<section>427</section>
+<section>17.207804300</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=111, datalen=64</section>
+</packet>
+
+<packet>
+<section>428</section>
+<section>17.274940100</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>538</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=112, datalen=464</section>
+</packet>
+
+<packet>
+<section>429</section>
+<section>17.321888800</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=136, datalen=48</section>
+</packet>
+
+<packet>
+<section>430</section>
+<section>19.530676500</section>
+<section>192.168.1.21</section>
+<section>255.255.255.255</section>
+<section>UDP</section>
+<section>303</section>
+<section>55472 → 6667 Len=261</section>
+</packet>
+
+<packet>
+<section>431</section>
+<section>19.588474000</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>0xfffa</section>
+<section>100</section>
+<section>Ethernet II</section>
+</packet>
+
+<packet>
+<section>432</section>
+<section>19.646499100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=137, datalen=64</section>
+</packet>
+
+<packet>
+<section>433</section>
+<section>19.719005100</section>
+<section>192.168.1.30</section>
+<section>255.255.255.255</section>
+<section>UDP</section>
+<section>303</section>
+<section>62340 → 6667 Len=261</section>
+</packet>
+
+<packet>
+<section>434</section>
+<section>19.837344800</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=113, datalen=64</section>
+</packet>
+
+<packet>
+<section>435</section>
+<section>19.837490500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=138, datalen=48</section>
+</packet>
+
+<packet>
+<section>436</section>
+<section>19.837729500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>490</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=139, datalen=416</section>
+</packet>
+
+<packet>
+<section>437</section>
+<section>19.999615700</section>
+<section>192.168.1.29</section>
+<section>255.255.255.255</section>
+<section>UDP</section>
+<section>303</section>
+<section>63783 → 6667 Len=261</section>
+</packet>
+
+<packet>
+<section>438</section>
+<section>20.026275600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=114, datalen=48</section>
+</packet>
+
+<packet>
+<section>439</section>
+<section>20.027433600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>234</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=115, datalen=160</section>
+</packet>
+
+<packet>
+<section>440</section>
+<section>20.028540800</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>1402</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=140, datalen=1328</section>
+</packet>
+
+<packet>
+<section>441</section>
+<section>20.258953300</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=116, datalen=48</section>
+</packet>
+
+<packet>
+<section>442</section>
+<section>20.321160000</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1322</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=117, datalen=1248</section>
+</packet>
+
+<packet>
+<section>443</section>
+<section>20.321160000</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=118, datalen=80</section>
+</packet>
+
+<packet>
+<section>444</section>
+<section>20.321314200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=141, datalen=48</section>
+</packet>
+
+<packet>
+<section>445</section>
+<section>20.322129100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=142, datalen=48</section>
+</packet>
+
+<packet>
+<section>446</section>
+<section>20.322149200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=143, datalen=64</section>
+</packet>
+
+<packet>
+<section>447</section>
+<section>20.420943800</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=144, datalen=64</section>
+</packet>
+
+<packet>
+<section>448</section>
+<section>20.496707400</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.20? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>449</section>
+<section>20.510553800</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=119, datalen=64</section>
+</packet>
+
+<packet>
+<section>450</section>
+<section>20.510707200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=145, datalen=48</section>
+</packet>
+
+<packet>
+<section>451</section>
+<section>20.510932500</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>490</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=146, datalen=416</section>
+</packet>
+
+<packet>
+<section>452</section>
+<section>20.594584600</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.21? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>453</section>
+<section>20.614562500</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.22? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>454</section>
+<section>20.660954300</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>138</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=120, datalen=64</section>
+</packet>
+
+<packet>
+<section>455</section>
+<section>20.699611900</section>
+<section>FiberhomeTel_31:34:58</section>
+<section>Broadcast</section>
+<section>ARP</section>
+<section>60</section>
+<section>Who has 192.168.1.23? Tell 192.168.1.1</section>
+</packet>
+
+<packet>
+<section>456</section>
+<section>20.700286600</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=121, datalen=48</section>
+</packet>
+
+<packet>
+<section>457</section>
+<section>20.703294000</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1466</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=122, datalen=1392</section>
+</packet>
+
+<packet>
+<section>458</section>
+<section>20.703413400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1466</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=123, datalen=1392</section>
+</packet>
+
+<packet>
+<section>459</section>
+<section>20.703413400</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>186</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=124, datalen=112</section>
+</packet>
+
+<packet>
+<section>460</section>
+<section>20.703501200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=147, datalen=48</section>
+</packet>
+
+<packet>
+<section>461</section>
+<section>20.703550300</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1434</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=125, datalen=1360</section>
+</packet>
+
+<packet>
+<section>462</section>
+<section>20.703638200</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=148, datalen=48</section>
+</packet>
+
+<packet>
+<section>463</section>
+<section>20.705044100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>218</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=149, datalen=144</section>
+</packet>
+
+<packet>
+<section>464</section>
+<section>20.893903200</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>378</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=126, datalen=304</section>
+</packet>
+
+<packet>
+<section>465</section>
+<section>20.895675300</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>794</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=150, datalen=720</section>
+</packet>
+
+<packet>
+<section>466</section>
+<section>21.098714000</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>1066</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=127, datalen=992</section>
+</packet>
+
+<packet>
+<section>467</section>
+<section>21.098714000</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>154</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=128, datalen=80</section>
+</packet>
+
+<packet>
+<section>468</section>
+<section>21.098714000</section>
+<section>167.99.181.184</section>
+<section>192.168.1.25</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x2D8742A9, counter=129, datalen=48</section>
+</packet>
+
+<packet>
+<section>469</section>
+<section>21.098898000</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=151, datalen=48</section>
+</packet>
+
+<packet>
+<section>470</section>
+<section>21.099256100</section>
+<section>192.168.1.25</section>
+<section>167.99.181.184</section>
+<section>WireGuard</section>
+<section>122</section>
+<section>Transport Data, receiver=0x0CCF4767, counter=152, datalen=48</section>
+</packet>
+
+</psml>

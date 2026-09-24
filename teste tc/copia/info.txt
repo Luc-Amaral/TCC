@@ -1,0 +1,7 @@
+sudo vpn_tester_env/bin/python vpn_tester.py
+
+https://ifconfig.me/
+
+Linux/macOS: source vpn_tester_env/bin/activate
+
+Windows: vpn_tester_env\Scripts\activate
