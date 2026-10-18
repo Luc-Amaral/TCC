@@ -25,7 +25,6 @@ class NetworkIntegrationTests(unittest.TestCase):
         self.assertTrue(interface_fisica)
         self.assertNotEqual(interface_vpn, interface_fisica)
         self.assertTrue(processo or os.getenv('ALLOW_MISSING_VPN_PROCESS') == '1')
-
-
+        
 if __name__ == '__main__':
     unittest.main()
