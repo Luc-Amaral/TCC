@@ -10,6 +10,36 @@ cd "c:\Users\lucas\Documents\academic\TCC TESTES\teste tc"
 python main.py
 ```
 
+## Instalacao automatizada no Windows
+
+Opcao recomendada, sem depender do GNU Make:
+
+```powershell
+Set-ExecutionPolicy -Scope Process Bypass
+.\setup.ps1
+```
+
+O script verifica Python, cria `vpn_tester_env` se necessario, instala `requirements.txt`, verifica imports, confirma `route`, `netstat` e `ipconfig`, detecta o Npcap e inicia sua instalacao quando ele nao estiver presente.
+
+Com GNU Make ou `mingw32-make` instalado, o mesmo procedimento pode ser executado com:
+
+```powershell
+make install
+```
+
+O instalador do Npcap ainda pode solicitar confirmacao do UAC e aceitar a licenca manualmente. Se Python nao estiver instalado, instale Python 3.10 ou superior antes de executar o script.
+
+Alvos individuais:
+
+```powershell
+make download-npcap
+make install-npcap
+make check-tools
+make test
+make compile
+make run
+```
+
 Execute com a VPN desligada para coletar o baseline e conecte-a quando o programa solicitar. A captura do Scapy pode exigir PowerShell como Administrador e Npcap instalado.
 
 ## Testes ativos

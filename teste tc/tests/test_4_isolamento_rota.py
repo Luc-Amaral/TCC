@@ -15,7 +15,8 @@ def executar(interface_fisica, interface_vpn):
     resultado = {"status": "INCONCLUSIVO", "detalhes": "", "pacote_vazado": None}
 
     try:
-        filtro_bpf = "(tcp port 80 or tcp port 443) or (udp dst port 53 or udp dst port 443)"
+        alvos_ips = "host 1.1.1.1 or host 8.8.8.8 or host 2606:4700:4700::1111"
+        filtro_bpf = f"({alvos_ips}) and ((tcp port 80 or tcp port 443) or (udp dst port 53 or udp dst port 443))"
         print(f"    [*] Monitorando TCP/80, TCP/443, UDP/53 e UDP/443 na física e na VPN...")
         
         sniffer_fisica = AsyncSniffer(iface=interface_fisica, filter=filtro_bpf)

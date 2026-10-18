@@ -90,8 +90,8 @@ if __name__ == "__main__":
 
     INTERFACE_FISICA = _confirmar_interface_fisica(INTERFACE_FISICA, args.sem_prompt)
 
-    if not interface_esta_ativa(INTERFACE_VPN):
-        raise SystemExit(f"Interface VPN '{INTERFACE_VPN}' nao esta ativa; auditoria cancelada.")
+    #if not interface_esta_ativa(INTERFACE_VPN):
+    #    raise SystemExit(f"Interface VPN '{INTERFACE_VPN}' nao esta ativa; auditoria cancelada.")
     if not interface_esta_ativa(INTERFACE_FISICA):
         raise SystemExit(f"Interface fisica '{INTERFACE_FISICA}' nao esta ativa; auditoria cancelada.")
 

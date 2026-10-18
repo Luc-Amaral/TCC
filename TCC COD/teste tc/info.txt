@@ -1,0 +1,168 @@
+ARQUIVO HISTORICO DE REVISAO
+
+As instrucoes atuais estao em README.md. O ponto de entrada ativo e main.py.
+Use o ambiente virtual Windows com .\vpn_tester_env\Scripts\Activate.ps1.
+
+sudo vpn_tester_env/bin/python vpn_tester.py
+
+https://ifconfig.me/
+
+Linux/macOS: source vpn_tester_env/bin/activate
+
+Windows: vpn_tester_env\Scripts\activate
+
+
+Veredito
+A execução real confirmou que o fluxo principal funciona e que alguns problemas foram corrigidos. Porém, os cinco resultados SUCESSO não provam que a VPN é completamente segura.
+
+Eles comprovam apenas que determinados tráfegos foram observados na interface VPN e não na Ethernet durante aquela execução.
+
+Problemas críticos ainda existentes
+1. Kill switch pode gerar falso sucesso
+O teste test_5_killswitch.py:
+
+inicia a thread de tráfego antes de matar a VPN;
+mata HoxxVPN.exe;
+aguarda o processo terminar;
+inicia a captura depois da queda;
+considera sucesso se não encontrar SYN.
+O problema é que ele não confirma que houve um SYN pós-queda. Se todas as requisições falharem imediatamente após a morte da VPN, nenhum pacote será capturado e o resultado será SUCESSO, mesmo sem ter sido realmente testado o bloqueio.
+
+Também não verifica:
+
+se a interface VPN desapareceu;
+se a rota VPN foi removida;
+se a rota física ficou bloqueada;
+quantas requisições foram realmente tentadas;
+se houve uma tentativa de conexão depois da queda.
+A execução confirma que o processo foi encerrado, mas ainda não prova completamente o comportamento do kill switch.
+
+Status: parcialmente resolvido.
+
+2. IPv6 ainda pode ser inconclusivo tratado como sucesso
+No teste test_3_privacidade.py, se a consulta IPv6 falhar, a exceção é ignorada:
+
+except Exception:
+    pass
+
+Assim, não é possível distinguir:
+
+IPv6 realmente bloqueado;
+IPv6 indisponível;
+timeout;
+erro de rota;
+falha da API;
+falha de captura.
+Além disso, uma falha na consulta IPv4 pode deixar o status inconclusivo, mas a detecção de DNS na VPN pode posteriormente alterar o status para SUCESSO.
+
+Status: parcialmente resolvido.
+
+3. O teste 1 não testa o algoritmo de criptografia
+O resultado:
+SUCESSO ABSOLUTO: O pacote foi roteado para dentro do túnel e blindado fisicamente.
+
+é forte demais.
+
+O que foi demonstrado:
+
+o payload foi capturado na interface HoxxVPN;
+o payload não apareceu na interface Ethernet;
+o tráfego foi encaminhado para o túnel;
+não foi observado vazamento do payload na interface física.
+Isso é uma boa evidência de isolamento e encapsulamento, mas não comprova:
+
+qual algoritmo criptográfico foi usado;
+se a criptografia é forte;
+se existe autenticação;
+se o conteúdo não pode ser alterado;
+se o túnel protege contra replay ou ataques ativos.
+Status: resolvido como teste de vazamento/roteamento, não como teste completo de criptografia.
+
+Interpretação dos cinco resultados
+Teste 1: payload
+Resultado válido para:
+
+payload visível no túnel;
+payload ausente na interface física.
+A string está sendo enviada pelo socket do sistema para 8.8.8.8:9999. O sistema escolhe a rota, e a captura confirmou que ela foi observada em HoxxVPN.
+
+Isso confirma o caminho esperado, mas não confirma criptografia de forma independente.
+
+Teste 2: HTTP
+O resultado:
+
+Nenhum tráfego porta 80 vazou. Requisição isolada no túnel.
+
+é consistente com a captura observada.
+
+Mas o teste ainda verifica apenas isolamento de TCP/80. Ele não verifica integridade criptográfica, alteração de conteúdo ou autenticidade da resposta.
+
+O nome atual “Isolamento HTTP” está adequado; “Integridade” seria incorreto.
+
+Teste 3: IPv4 e DNS
+O resultado IPv4 foi coerente:
+
+IP antes da VPN: 143.255.216.250
+IP depois da VPN: 135.148.103.156
+Isso indica alteração do IPv4 público.
+
+O DNS também foi observado somente na interface VPN, o que é uma evidência válida para DNS UDP/53 naquele momento.
+
+Contudo, a saída não mostra explicitamente o resultado do IPv6. Portanto, o SUCESSO geral não significa necessariamente que o IPv6 foi comprovadamente bloqueado.
+
+Teste 4: rota
+O resultado confirma que os SYNs TCP/443 para 1.1.1.1 e 8.8.8.8 apareceram somente na interface VPN.
+
+Isso valida o roteamento IPv4 TCP/443 durante a VPN ativa.
+
+Não valida:
+
+UDP;
+IPv6;
+DNS;
+outras portas;
+comportamento quando a VPN cai.
+Teste 5: kill switch
+A execução confirma:
+Processo morto.
+Iniciando captura de emergência pós-queda.
+A rota foi bloqueada imediatamente após a queda do túnel.
+
+
+Isso é melhor que a versão anterior porque:
+
+a morte do processo foi aguardada;
+a captura pós-queda é separada temporalmente;
+o tráfego não é analisado antes da queda.
+Ainda assim, o teste precisa confirmar que realmente houve tentativa de conexão após a morte. Sem essa confirmação, ausência de SYN pode ser apenas ausência de tráfego.
+
+Status: melhorado, mas não definitivamente comprovado.
+
+Outros pontos
+A seleção de HoxxVPN.exe foi coerente nesta execução.
+A interface física Ethernet foi confirmada manualmente e tinha o IP esperado.
+A detecção continua baseada em heurísticas de nomes.
+O relatório JSON foi validado anteriormente e é serializável.
+Compilação e imports atuais passaram.
+Os diagnósticos restantes do Pylance pertencem às cópias antigas, não ao fluxo ativo.
+A execução matou efetivamente o processo da VPN; após o teste, a VPN precisa ser iniciada novamente manualmente.
+Estado final
+Área	Estado
+Interface VPN nos testes	Resolvido
+Payload na VPN e ausência na Ethernet	Resolvido para isolamento
+Criptografia real	Não comprovada
+HTTP fora do túnel	Verificado parcialmente
+IPv4	Verificado
+DNS UDP/53	Verificado parcialmente
+IPv6	Parcial/inconclusivo
+Rota IPv4 TCP/443	Verificado
+Kill switch	Parcialmente verificado
+Relatório JSON	Resolvido
+Segurança geral da VPN	Ainda não comprovada
+A execução foi bem-sucedida como uma bateria de testes de vazamento e isolamento, mas o relatório deveria ser interpretado como:
+
+“Nenhum vazamento foi observado nos cenários monitorados; o kill switch bloqueou o tráfego observado após a morte do processo.”
+
+Não como:
+
+“A VPN foi completamente comprovada como segura.”

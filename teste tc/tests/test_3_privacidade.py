@@ -76,8 +76,11 @@ def executar(ips_reais, dns_real, interface_fisica, interface_vpn):
         print(f"    [+] ISOLAMENTO IPv6: O tráfego IPv6 atuou com segurança ({estado_v6}).")
         resultado["detalhes"] += f"IPv6 isolado ({estado_v6}). "
     else:
-        print(f"    [-] AVISO IPv6: Indisponível ou erro na placa local ({estado_v6}).")
-        if status_ip != "FALHA": status_ip = "INCONCLUSIVO"
+        if not ips_reais.get('v6'):
+            print(f"    [-] AVISO IPv6: Ignorado (IPv6 nativo não suportado pelo ISP).")
+        else:
+            print(f"    [-] AVISO IPv6: Indisponível ou erro na placa local ({estado_v6}).")
+            if status_ip != "FALHA": status_ip = "INCONCLUSIVO"
 
     # --- 3.3 Verificação de DNS ---
     status_dns = "INCONCLUSIVO"

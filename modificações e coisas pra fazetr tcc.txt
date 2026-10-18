@@ -1,0 +1,7 @@
+teste de velocidade e desempenho
+teste de tempo de conexão da vpn
+analise de oq tem de comum, pensar que vou ter q dar nome para a ferramenta
+quais as caracteristicas que permitem analisar
+verificar alem de json, tentar fazer graficos
+criar script para auxilio no clownd, gemini para tcc, tentar marcar os arquivos de codigo junto ao exemplo do abbas e dizer para ajudar
+em um modelo de monografia inspirado no abbas para extrutura e coisas afins do tcc para monografia
