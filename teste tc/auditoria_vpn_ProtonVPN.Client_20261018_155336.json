@@ -1,0 +1,211 @@
+{
+  "timestamp": "2026-10-18T15:53:36",
+  "veredicto_final": "NAO COMPROVADO",
+  "escopo_auditoria": {
+    "sistema_operacional": "Windows 10",
+    "protocolos_monitorados": [
+      "TCP/80",
+      "TCP/443",
+      "TCP/853 (DoT)",
+      "UDP/53",
+      "UDP/443",
+      "DoH/HTTPS",
+      "IPv4",
+      "IPv6"
+    ],
+    "bypass_proxy_local": true,
+    "analise_criptografica": "Não testada. Restrito a L3/L4 (Isolamento, Fallback e QoS)",
+    "comportamento_esperado_queda": "Fail-Closed (Bloqueio estrito de tráfego físico pós-queda)"
+  },
+  "baseline_ips": {
+    "v4": "143.255.216.137",
+    "v6": null
+  },
+  "baseline_dns": [
+    "177.23.185.14",
+    "8.8.8.8",
+    "54.81.22.119"
+  ],
+  "baseline_velocidade": {
+    "status": "CONCLUIDO",
+    "detalhes": "Ping: 41.57ms | Down: 86.27 Mbps | Up: 68.05 Mbps",
+    "ping_ms": 41.57,
+    "download_mbps": 86.27,
+    "upload_mbps": 68.05
+  },
+  "processo_vpn_alvo": "ProtonVPN.Client",
+  "interfaces": {
+    "vpn": "ProTUN",
+    "fisica": "Ethernet"
+  },
+  "resultados": {
+    "Isolamento de Payload UDP": {
+      "status": "ISOLADO",
+      "detalhes": "Isolamento de payload L4 confirmado no adaptador virtual.",
+      "pacote_fisica": null,
+      "pacote_vpn": "IP / UDP 10.2.0.2:58542 > 8.8.8.8:9999 / Raw"
+    },
+    "Isolamento HTTP": {
+      "status": "ISOLADO",
+      "detalhes": "Requisição levantou exceção: HTTPConnectionPool(host='34.223.124.45', port=80): Read timed out. (read timeout=4). Tráfego HTTP isolado na VPN.",
+      "amostra_vazamento": null
+    },
+    "Privacidade (IP/DNS/IPv6)": {
+      "status": "ISOLADO",
+      "detalhes": "IPv4 mascarado. DNS isolado na VPN. (Testes DoH/DoT ausentes). DoH/DoT isolados na VPN. ",
+      "ip_detectado": "v4:IPv4_MASCARADO | v6:IPv6_ERRO",
+      "dominio_dns": "test-1792349572871.dnsleaktest.com",
+      "dns_pacotes_fisica": 0,
+      "dns_pacotes_vpn": 4,
+      "dns_protocolos": [
+        "UDP"
+      ],
+      "ipv4_status": "IPv4_MASCARADO",
+      "ipv6_status": "IPv6_ERRO",
+      "dns_status": "ISOLADO",
+      "doh_dot_status": "ISOLADO",
+      "doh_dot_pacotes_fisica": 0,
+      "doh_dot_pacotes_vpn": 31
+    },
+    "Isolamento de Rotas (Multi-Protocolo)": {
+      "status": "ISOLADO",
+      "detalhes": "Rota blindada para TCP/80, TCP/443, IPv6 TCP/443, UDP/53 e UDP/443.",
+      "pacote_vazado": null
+    },
+    "Impacto de Desempenho (QoS)": {
+      "status": "CONCLUIDO",
+      "detalhes": "Ping: 255.03ms | Down: 31.85 Mbps | Up: 14.49 Mbps",
+      "ping_ms": 255.03,
+      "download_mbps": 31.85,
+      "upload_mbps": 14.49
+    },
+    "Kill-Switch (Isolamento Cronológico)": {
+      "status": "BLOQUEADO",
+      "detalhes": "Fail-Closed: Processo encerrou, e 5 tentativas injetadas foram bloqueadas na origem.",
+      "pacote_vazado": null,
+      "tentativas_pos_queda": 5,
+      "syns_pos_queda": 0,
+      "captura_confirmada": true,
+      "processo_terminou": true,
+      "rotas_antes": "===========================================================================\nLista de interfaces\n 68...........................Proton VPN Windows Tunnel\n 11...00 ff 59 5e 20 a9 ......TAP-Windows Adapter V9\n 17...0a 00 27 00 00 11 ......VirtualBox Host-Only Ethernet Adapter\n  9...92 91 64 30 56 76 ......Microsoft Wi-Fi Direct Virtual Adapter\n 19...90 91 64 30 56 76 ......Microsoft Wi-Fi Direct Virtual Adapter #2\n 10...74 56 3c f2 94 dc ......Realtek PCIe GbE Family Controller\n 13...90 91 64 30 56 76 ......Realtek 8812BU Wireless LAN 802.11ac USB NIC\n 15...00 ff 8c c1 20 0c ......TunnelBear Adapter V9\n  1...........................Software Loopback Interface 1\n===========================================================================\n\nTabela de rotas IPv4\n===========================================================================\nRotas ativas:\nEndere‡o de rede          M scara   Ender. gateway       Interface   Custo\n          0.0.0.0          0.0.0.0      192.168.1.1     192.168.1.26     35\n          0.0.0.0          0.0.0.0      No v¡nculo          10.2.0.2      1\n          0.0.0.0        128.0.0.0      No v¡nculo          10.2.0.2      1\n         10.2.0.1  255.255.255.255      No v¡nculo          10.2.0.2      1\n         10.2.0.2  255.255.255.255      No v¡nculo          10.2.0.2    256\n   89.105.214.200  255.255.255.255      192.168.1.1     192.168.1.26     36\n        127.0.0.0        255.0.0.0      No v¡nculo         127.0.0.1    331\n        127.0.0.1  255.255.255.255      No v¡nculo         127.0.0.1    331\n  127.255.255.255  255.255.255.255      No v¡nculo         127.0.0.1    331\n  127.255.255.255  255.255.255.255      No v¡nculo          10.2.0.2    256\n        128.0.0.0        128.0.0.0      No v¡nculo          10.2.0.2      1\n      192.168.1.0    255.255.255.0      No v¡nculo      192.168.1.26    291\n     192.168.1.26  255.255.255.255      No v¡nculo      192.168.1.26    291\n    192.168.1.255  255.255.255.255      No v¡nculo      192.168.1.26    291\n     192.168.56.0    255.255.255.0      No v¡nculo      192.168.56.1    281\n     192.168.56.1  255.255.255.255      No v¡nculo      192.168.56.1    281\n   192.168.56.255  255.255.255.255      No v¡nculo      192.168.56.1    281\n        224.0.0.0        240.0.0.0      No v¡nculo         127.0.0.1    331\n        224.0.0.0        240.0.0.0      No v¡nculo      192.168.56.1    281\n        224.0.0.0        240.0.0.0      No v¡nculo      192.168.1.26    291\n        224.0.0.0        240.0.0.0      No v¡nculo          10.2.0.2    256\n  255.255.255.255  255.255.255.255      No v¡nculo         127.0.0.1    331\n  255.255.255.255  255.255.255.255      No v¡nculo      192.168.56.1    281\n  255.255.255.255  255.255.255.255      No v¡nculo      192.168.1.26    291\n  255.255.255.255  255.255.255.255      No v¡nculo          10.2.0.2    256\n===========================================================================\nRotas persistentes:\n  Nenhuma\n",
+      "rotas_depois": "===========================================================================\nLista de interfaces\n 68...........................Proton VPN Windows Tunnel\n 11...00 ff 59 5e 20 a9 ......TAP-Windows Adapter V9\n 17...0a 00 27 00 00 11 ......VirtualBox Host-Only Ethernet Adapter\n  9...92 91 64 30 56 76 ......Microsoft Wi-Fi Direct Virtual Adapter\n 19...90 91 64 30 56 76 ......Microsoft Wi-Fi Direct Virtual Adapter #2\n 10...74 56 3c f2 94 dc ......Realtek PCIe GbE Family Controller\n 13...90 91 64 30 56 76 ......Realtek 8812BU Wireless LAN 802.11ac USB NIC\n 15...00 ff 8c c1 20 0c ......TunnelBear Adapter V9\n  1...........................Software Loopback Interface 1\n===========================================================================\n\nTabela de rotas IPv4\n===========================================================================\nRotas ativas:\nEndere‡o de rede          M scara   Ender. gateway       Interface   Custo\n          0.0.0.0          0.0.0.0      192.168.1.1     192.168.1.26     35\n          0.0.0.0          0.0.0.0      No v¡nculo          10.2.0.2      1\n          0.0.0.0        128.0.0.0      No v¡nculo          10.2.0.2      1\n         10.2.0.1  255.255.255.255      No v¡nculo          10.2.0.2      1\n         10.2.0.2  255.255.255.255      No v¡nculo          10.2.0.2    256\n   89.105.214.200  255.255.255.255      192.168.1.1     192.168.1.26     36\n        127.0.0.0        255.0.0.0      No v¡nculo         127.0.0.1    331\n        127.0.0.1  255.255.255.255      No v¡nculo         127.0.0.1    331\n  127.255.255.255  255.255.255.255      No v¡nculo         127.0.0.1    331\n  127.255.255.255  255.255.255.255      No v¡nculo          10.2.0.2    256\n        128.0.0.0        128.0.0.0      No v¡nculo          10.2.0.2      1\n      192.168.1.0    255.255.255.0      No v¡nculo      192.168.1.26    291\n     192.168.1.26  255.255.255.255      No v¡nculo      192.168.1.26    291\n    192.168.1.255  255.255.255.255      No v¡nculo      192.168.1.26    291\n     192.168.56.0    255.255.255.0      No v¡nculo      192.168.56.1    281\n     192.168.56.1  255.255.255.255      No v¡nculo      192.168.56.1    281\n   192.168.56.255  255.255.255.255      No v¡nculo      192.168.56.1    281\n        224.0.0.0        240.0.0.0      No v¡nculo         127.0.0.1    331\n        224.0.0.0        240.0.0.0      No v¡nculo      192.168.56.1    281\n        224.0.0.0        240.0.0.0      No v¡nculo      192.168.1.26    291\n        224.0.0.0        240.0.0.0      No v¡nculo          10.2.0.2    256\n  255.255.255.255  255.255.255.255      No v¡nculo         127.0.0.1    331\n  255.255.255.255  255.255.255.255      No v¡nculo      192.168.56.1    281\n  255.255.255.255  255.255.255.255      No v¡nculo      192.168.1.26    291\n  255.255.255.255  255.255.255.255      No v¡nculo          10.2.0.2    256\n===========================================================================\nRotas persistentes:\n  Nenhuma\n",
+      "interface_vpn_antes": true,
+      "interface_vpn_depois": true
+    }
+  },
+  "estado_rede": {
+    "gateway_padrao": "192.168.1.1",
+    "tabela_rotas": "===========================================================================\nLista de interfaces\n 68...........................Proton VPN Windows Tunnel\n 11...00 ff 59 5e 20 a9 ......TAP-Windows Adapter V9\n 17...0a 00 27 00 00 11 ......VirtualBox Host-Only Ethernet Adapter\n  9...92 91 64 30 56 76 ......Microsoft Wi-Fi Direct Virtual Adapter\n 19...90 91 64 30 56 76 ......Microsoft Wi-Fi Direct Virtual Adapter #2\n 10...74 56 3c f2 94 dc ......Realtek PCIe GbE Family Controller\n 13...90 91 64 30 56 76 ......Realtek 8812BU Wireless LAN 802.11ac USB NIC\n 15...00 ff 8c c1 20 0c ......TunnelBear Adapter V9\n  1...........................Software Loopback Interface 1\n===========================================================================\n\nTabela de rotas IPv4\n===========================================================================\nRotas ativas:\nEndere‡o de rede          M scara   Ender. gateway       Interface   Custo\n          0.0.0.0          0.0.0.0      192.168.1.1     192.168.1.26     35\n          0.0.0.0          0.0.0.0      No v¡nculo          10.2.0.2      1\n          0.0.0.0        128.0.0.0      No v¡nculo          10.2.0.2      1\n         10.2.0.1  255.255.255.255      No v¡nculo          10.2.0.2      1\n         10.2.0.2  255.255.255.255      No v¡nculo          10.2.0.2    256\n   89.105.214.200  255.255.255.255      192.168.1.1     192.168.1.26     36\n        127.0.0.0        255.0.0.0      No v¡nculo         127.0.0.1    331\n        127.0.0.1  255.255.255.255      No v¡nculo         127.0.0.1    331\n  127.255.255.255  255.255.255.255      No v¡nculo         127.0.0.1    331\n  127.255.255.255  255.255.255.255      No v¡nculo          10.2.0.2    256\n        128.0.0.0        128.0.0.0      No v¡nculo          10.2.0.2      1\n      192.168.1.0    255.255.255.0      No v¡nculo      192.168.1.26    291\n     192.168.1.26  255.255.255.255      No v¡nculo      192.168.1.26    291\n    192.168.1.255  255.255.255.255      No v¡nculo      192.168.1.26    291\n     192.168.56.0    255.255.255.0      No v¡nculo      192.168.56.1    281\n     192.168.56.1  255.255.255.255      No v¡nculo      192.168.56.1    281\n   192.168.56.255  255.255.255.255      No v¡nculo      192.168.56.1    281\n        224.0.0.0        240.0.0.0      No v¡nculo         127.0.0.1    331\n        224.0.0.0        240.0.0.0      No v¡nculo      192.168.56.1    281\n        224.0.0.0        240.0.0.0      No v¡nculo      192.168.1.26    291\n        224.0.0.0        240.0.0.0      No v¡nculo          10.2.0.2    256\n  255.255.255.255  255.255.255.255      No v¡nculo         127.0.0.1    331\n  255.255.255.255  255.255.255.255      No v¡nculo      192.168.56.1    281\n  255.255.255.255  255.255.255.255      No v¡nculo      192.168.1.26    291\n  255.255.255.255  255.255.255.255      No v¡nculo          10.2.0.2    256\n===========================================================================\nRotas persistentes:\n  Nenhuma\n",
+    "interfaces": {
+      "HoxxVPN": {
+        "ips": [
+          "169.254.156.140"
+        ],
+        "status": {
+          "isup": false,
+          "duplex": 2,
+          "speed": 100,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "Ethernet 3": {
+        "ips": [
+          "192.168.56.1"
+        ],
+        "status": {
+          "isup": true,
+          "duplex": 2,
+          "speed": 1000,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "Conexão Local* 9": {
+        "ips": [
+          "169.254.225.3"
+        ],
+        "status": {
+          "isup": false,
+          "duplex": 2,
+          "speed": 0,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "Conexão Local* 10": {
+        "ips": [
+          "169.254.81.103"
+        ],
+        "status": {
+          "isup": false,
+          "duplex": 2,
+          "speed": 0,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "Ethernet": {
+        "ips": [
+          "192.168.1.26"
+        ],
+        "status": {
+          "isup": true,
+          "duplex": 2,
+          "speed": 100,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "Wi-Fi": {
+        "ips": [
+          "169.254.215.104"
+        ],
+        "status": {
+          "isup": false,
+          "duplex": 2,
+          "speed": 144,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "Ethernet 2": {
+        "ips": [
+          "169.254.134.104"
+        ],
+        "status": {
+          "isup": false,
+          "duplex": 2,
+          "speed": 10,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "ProTUN": {
+        "ips": [
+          "10.2.0.2"
+        ],
+        "status": {
+          "isup": true,
+          "duplex": 2,
+          "speed": 4294,
+          "mtu": 65535,
+          "flags": ""
+        }
+      },
+      "Loopback Pseudo-Interface 1": {
+        "ips": [
+          "127.0.0.1",
+          "::1"
+        ],
+        "status": {
+          "isup": true,
+          "duplex": 2,
+          "speed": 1073,
+          "mtu": 1500,
+          "flags": ""
+        }
+      }
+    }
+  }
+}

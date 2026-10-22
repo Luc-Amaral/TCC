@@ -2,10 +2,11 @@ import json
 import platform
 from datetime import datetime
 
-from tests import test_1_isolamento_payload, test_2_isolamento_http, test_3_privacidade, test_4_isolamento_rota, test_5_killswitch
+from tests import test_1_isolamento_payload, test_2_isolamento_http, test_3_privacidade, test_4_isolamento_rota, test_5_desempenho, test_6_killswitch
+from utils import graficos
 
 class VPNSecurityTester:
-    def __init__(self, ips_reais, dns_real, vpn_process_name, interface_rede, interface_fisica, info_rede=None, salvar_relatorio=False):
+    def __init__(self, ips_reais, dns_real, vpn_process_name, interface_rede, interface_fisica, info_rede=None, salvar_relatorio=False, baseline_velocidade=None):
         self.ips_reais = ips_reais
         self.dns_real = dns_real
         self.vpn_process_name = vpn_process_name
@@ -13,16 +14,14 @@ class VPNSecurityTester:
         self.interface_fisica = interface_fisica
         self.info_rede = info_rede or {}
         self.salvar_relatorio = salvar_relatorio
+        self.baseline_velocidade = baseline_velocidade or {}
         self.resultados = {}
         
         self.escopo_auditoria = {
             "sistema_operacional": f"{platform.system()} {platform.release()}",
-            "protocolos_monitorados": [
-                "TCP/80", "TCP/443", "TCP/853 (DoT)", "UDP/53", "UDP/443",
-                "DoH/HTTPS", "IPv4", "IPv6"
-            ],
+            "protocolos_monitorados": ["TCP/80", "TCP/443", "TCP/853 (DoT)", "UDP/53", "UDP/443", "DoH/HTTPS", "IPv4", "IPv6"],
             "bypass_proxy_local": True,
-            "analise_criptografica": "Não testada. Restrito a auditoria L3/L4 (Isolamento de rotas e Fallback)",
+            "analise_criptografica": "Não testada. Restrito a L3/L4 (Isolamento, Fallback e QoS)",
             "comportamento_esperado_queda": "Fail-Closed (Bloqueio estrito de tráfego físico pós-queda)"
         }
 
@@ -33,27 +32,30 @@ class VPNSecurityTester:
         print(f"Processo Alvo    : {self.vpn_process_name}")
         print("-" * 50)
 
-        self.resultados['Isolamento de Payload UDP'] = self._executar_com_protecao(
-            test_1_isolamento_payload.executar, self.interface_fisica, self.interface_vpn
-        )
-        self.resultados['Isolamento HTTP'] = self._executar_com_protecao(
-            test_2_isolamento_http.executar, self.interface_fisica, self.interface_vpn
-        )
-        self.resultados['Privacidade (IP/DNS/IPv6)'] = self._executar_com_protecao(
-            test_3_privacidade.executar, self.ips_reais, self.dns_real, self.interface_fisica, self.interface_vpn
-        )
-        self.resultados['Isolamento de Rotas (Multi-Protocolo)'] = self._executar_com_protecao(
-            test_4_isolamento_rota.executar, self.interface_fisica, self.interface_vpn
-        )
-        self.resultados['Kill-Switch (Isolamento Cronológico)'] = self._executar_com_protecao(
-            test_5_killswitch.executar, self.vpn_process_name, self.interface_fisica, self.interface_vpn
-        )
+        self.resultados['Isolamento de Payload UDP'] = self._executar_com_protecao(test_1_isolamento_payload.executar, self.interface_fisica, self.interface_vpn)
+        self.resultados['Isolamento HTTP'] = self._executar_com_protecao(test_2_isolamento_http.executar, self.interface_fisica, self.interface_vpn)
+        self.resultados['Privacidade (IP/DNS/IPv6)'] = self._executar_com_protecao(test_3_privacidade.executar, self.ips_reais, self.dns_real, self.interface_fisica, self.interface_vpn)
+        self.resultados['Isolamento de Rotas (Multi-Protocolo)'] = self._executar_com_protecao(test_4_isolamento_rota.executar, self.interface_fisica, self.interface_vpn)
+
+        # Teste 6 ANTES do kill-switch: o processo da VPN precisa estar vivo
+        # para que a medição de velocidade reflita o real impacto do túnel VPN.
+        print("\n[*] 5. Testando Impacto de Desempenho (QoS) — VPN ativa...")
+        self.resultados['Impacto de Desempenho (QoS)'] = self._executar_com_protecao(test_5_desempenho.executar)
+
+        # Teste 6 SEMPRE por último: encerra o processo da VPN de forma violenta.
+        self.resultados['Kill-Switch (Isolamento Cronológico)'] = self._executar_com_protecao(test_6_killswitch.executar, self.vpn_process_name, self.interface_fisica, self.interface_vpn)
 
         relatorio = self._gerar_relatorio()
         if self.salvar_relatorio:
-            relatorio['relatorio_salvo'] = self._salvar_relatorio(relatorio)
+            caminho_json = self._salvar_relatorio(relatorio)
+            relatorio['relatorio_salvo'] = bool(caminho_json)
+            if caminho_json:
+                import os
+                graficos.gerar_dashboard(caminho_json, relatorio)
+                # Gera (ou atualiza) o comparativo multi-VPN com todas as auditorias da pasta
+                pasta = os.path.dirname(os.path.abspath(caminho_json)) or '.'
+                graficos.gerar_comparativo_qos(pasta)
         return relatorio
-
     @staticmethod
     def _executar_com_protecao(funcao, *args):
         try:
@@ -67,7 +69,7 @@ class VPNSecurityTester:
     def _avaliar_politica_resultado(self):
         if not self.resultados: return "NAO COMPROVADO"
         
-        estados_aprovados = {"SUCESSO", "ISOLADO", "BLOQUEADO"}
+        estados_aprovados = {"SUCESSO", "ISOLADO", "BLOQUEADO", "CONCLUIDO"}
         estados = [dados.get('status', 'ERRO') for dados in self.resultados.values()]
         
         if "FALHA" in estados: return "REPROVADO"
@@ -85,7 +87,7 @@ class VPNSecurityTester:
         print("=" * 50)
 
         aprovados = {
-            "SUCESSO", "ISOLADO", "BLOQUEADO"
+            "SUCESSO", "ISOLADO", "BLOQUEADO", "CONCLUIDO"
         }
         grupos = {
             "APROVADOS": [],
@@ -133,6 +135,8 @@ class VPNSecurityTester:
             'escopo_auditoria': self.escopo_auditoria,
             'baseline_ips': self.ips_reais,
             'baseline_dns': list(self.dns_real),
+            # Medição de velocidade capturada ANTES da VPN ser ligada (regra de ouro QoS)
+            'baseline_velocidade': self.baseline_velocidade,
             'processo_vpn_alvo': self.vpn_process_name,
             'interfaces': {
                 'vpn': self.interface_vpn,
@@ -157,7 +161,7 @@ class VPNSecurityTester:
             with open(nome_arquivo, 'w', encoding='utf-8') as arquivo:
                 json.dump(relatorio, arquivo, indent=2, ensure_ascii=False)
             print(f"[+] Relatório JSON salvo em: {nome_arquivo}")
-            return True
+            return nome_arquivo
         except Exception as e:
             print(f"[-] Erro crítico ao salvar o relatório JSON: {e}")
-            return False
+            return None

@@ -1,6 +1,6 @@
 import argparse
 import sys
-
+from tests import test_5_desempenho
 from core.nucleo_exec import VPNSecurityTester
 from utils.network import detectar_ambiente_vpn, interface_esta_ativa, listar_interfaces_ativas, obter_detalhes_interface, obter_dns_real, obter_ips_reais
 
@@ -46,20 +46,27 @@ if __name__ == "__main__":
     print("=== Preparação para os Testes (Baseline) ===")
     args = _parse_args()
 
-    # O baseline agora exige a verificação completa (IPv4 e IPv6) blindada contra proxies
     MEUS_IPS_REAIS = obter_ips_reais()
     MEUS_DNS_REAIS = obter_dns_real()
 
-    # Bloqueio estrito: não avança se o baseline não for estabelecido (Evita falsos positivos na base)
     if not MEUS_IPS_REAIS.get('v4') or not MEUS_DNS_REAIS:
-        print("[-] ERRO CRÍTICO: Falha ao estabelecer o baseline da rede (IP original não detectado).")
-        print("    A auditoria não pode prosseguir sem conhecer a assinatura original da máquina.")
+        print("[-] ERRO CRÍTICO: Falha ao estabelecer o baseline da rede.")
         sys.exit(1)
+
+
+    print("\n[*] Capturando Baseline de Velocidade (Sem VPN)...")
+    DESEMPENHO_BASE = test_5_desempenho.executar()
+    if DESEMPENHO_BASE.get("status") == "CONCLUIDO":
+        print(f"    [+] Baseline QoS: {DESEMPENHO_BASE['detalhes']}")
+    else:
+        print("    [-] Aviso: Falha ao medir baseline QoS. Os gráficos poderão ficar incompletos.")
+    # ------------------------------------------------------
 
     print("\n" + "=" * 50)
     print(">>> LIGUE O CLIENTE VPN <<<")
     if not args.sem_prompt:
         input("Pressione [ENTER] APENAS QUANDO A VPN ESTIVER CONECTADA...")
+    
 
     # Passamos o argumento nome_vpn para forçar a busca exata caso o usuário forneça via CLI
     INTERFACE_VPN, NOME_PROCESSO_VPN, TIPO_VPN, INTERFACE_FISICA, DETALHES_REDE = detectar_ambiente_vpn(args.nome_vpn)
@@ -104,6 +111,7 @@ if __name__ == "__main__":
         INTERFACE_FISICA,
         info_rede=DETALHES_REDE,
         salvar_relatorio=args.salvar_relatorio,
+        baseline_velocidade=DESEMPENHO_BASE# <- PASSE O BASELINE AQUI
     )
     
     # Executa a suíte e garante que a chamada retorna o relatório gerado (como exigido no Plano)

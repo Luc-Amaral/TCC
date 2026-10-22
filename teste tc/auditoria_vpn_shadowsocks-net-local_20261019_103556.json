@@ -1,0 +1,196 @@
+{
+  "timestamp": "2026-10-19T10:35:56",
+  "veredicto_final": "NAO COMPROVADO",
+  "escopo_auditoria": {
+    "sistema_operacional": "Windows 10",
+    "protocolos_monitorados": [
+      "TCP/80",
+      "TCP/443",
+      "TCP/853 (DoT)",
+      "UDP/53",
+      "UDP/443",
+      "DoH/HTTPS",
+      "IPv4",
+      "IPv6"
+    ],
+    "bypass_proxy_local": true,
+    "analise_criptografica": "Não testada. Restrito a L3/L4 (Isolamento, Fallback e QoS)",
+    "comportamento_esperado_queda": "Fail-Closed (Bloqueio estrito de tráfego físico pós-queda)"
+  },
+  "baseline_ips": {
+    "v4": "143.255.216.137",
+    "v6": null
+  },
+  "baseline_dns": [
+    "177.23.185.14",
+    "8.8.8.8",
+    "54.81.22.119",
+    "172.18.10.1"
+  ],
+  "baseline_velocidade": {
+    "status": "CONCLUIDO",
+    "detalhes": "Ping: 19.97ms | Down: 93.79 Mbps | Up: 90.45 Mbps",
+    "ping_ms": 19.97,
+    "download_mbps": 93.79,
+    "upload_mbps": 90.45
+  },
+  "processo_vpn_alvo": "shadowsocks-net-local",
+  "interfaces": {
+    "vpn": "Ethernet 2",
+    "fisica": "Ethernet"
+  },
+  "resultados": {
+    "Isolamento de Payload UDP": {
+      "status": "ISOLADO",
+      "detalhes": "Isolamento de payload L4 confirmado no adaptador virtual.",
+      "pacote_fisica": null,
+      "pacote_vpn": "Ether / IP / UDP 172.18.10.42:56800 > 8.8.8.8:9999 / Raw"
+    },
+    "Isolamento HTTP": {
+      "status": "ISOLADO",
+      "detalhes": "Tráfego HTTP isolado na VPN.",
+      "amostra_vazamento": null
+    },
+    "Privacidade (IP/DNS/IPv6)": {
+      "status": "ISOLADO",
+      "detalhes": "IPv4 mascarado. DNS isolado na VPN. (Testes DoH/DoT ausentes). DoH/DoT isolados na VPN. ",
+      "ip_detectado": "v4:IPv4_MASCARADO | v6:IPv6_INCONCLUSIVO",
+      "dominio_dns": "test-1792416898416.dnsleaktest.com",
+      "dns_pacotes_fisica": 0,
+      "dns_pacotes_vpn": 20,
+      "dns_protocolos": [
+        "UDP"
+      ],
+      "ipv4_status": "IPv4_MASCARADO",
+      "ipv6_status": "IPv6_INCONCLUSIVO",
+      "dns_status": "ISOLADO",
+      "doh_dot_status": "ISOLADO",
+      "doh_dot_pacotes_fisica": 0,
+      "doh_dot_pacotes_vpn": 18
+    },
+    "Isolamento de Rotas (Multi-Protocolo)": {
+      "status": "ISOLADO",
+      "detalhes": "Rota blindada para TCP/80, TCP/443, IPv6 TCP/443, UDP/53 e UDP/443.",
+      "pacote_vazado": null
+    },
+    "Impacto de Desempenho (QoS)": {
+      "status": "CONCLUIDO",
+      "detalhes": "Ping: 240.89ms | Down: 4.2 Mbps | Up: 2.06 Mbps",
+      "ping_ms": 240.89,
+      "download_mbps": 4.2,
+      "upload_mbps": 2.06
+    },
+    "Kill-Switch (Isolamento Cronológico)": {
+      "status": "INCONCLUSIVO",
+      "detalhes": "Processo VPN 'shadowsocks-net-local' não foi identificado automaticamente; kill switch não executado.",
+      "pacote_vazado": null
+    }
+  },
+  "estado_rede": {
+    "gateway_padrao": "192.168.1.1",
+    "tabela_rotas": "===========================================================================\nLista de interfaces\n 23...00 ff af 49 6e 7a ......TunnelBear Adapter V9\n 11...00 ff 59 5e 20 a9 ......TAP-Windows Adapter V9\n 17...0a 00 27 00 00 11 ......VirtualBox Host-Only Ethernet Adapter\n  9...92 91 64 30 56 76 ......Microsoft Wi-Fi Direct Virtual Adapter\n 19...90 91 64 30 56 76 ......Microsoft Wi-Fi Direct Virtual Adapter #2\n 10...74 56 3c f2 94 dc ......Realtek PCIe GbE Family Controller\n 13...90 91 64 30 56 76 ......Realtek 8812BU Wireless LAN 802.11ac USB NIC\n  1...........................Software Loopback Interface 1\n===========================================================================\n\nTabela de rotas IPv4\n===========================================================================\nRotas ativas:\nEndere‡o de rede          M scara   Ender. gateway       Interface   Custo\n          0.0.0.0          0.0.0.0      192.168.1.1     192.168.1.26     35\n          0.0.0.0        128.0.0.0     172.18.10.37     172.18.10.42      0\n          0.0.0.0        128.0.0.0     172.18.10.45     172.18.10.42      0\n          0.0.0.0        128.0.0.0     172.18.10.41     172.18.10.42      0\n        127.0.0.0        255.0.0.0      No v¡nculo         127.0.0.1    331\n        127.0.0.1  255.255.255.255      No v¡nculo         127.0.0.1    331\n  127.255.255.255  255.255.255.255      No v¡nculo         127.0.0.1    331\n        128.0.0.0        128.0.0.0     172.18.10.37     172.18.10.42      0\n        128.0.0.0        128.0.0.0     172.18.10.45     172.18.10.42      0\n        128.0.0.0        128.0.0.0     172.18.10.41     172.18.10.42      0\n   143.198.38.158  255.255.255.255      192.168.1.1     192.168.1.26     35\n      172.18.10.1  255.255.255.255     172.18.10.41     172.18.10.42      0\n     172.18.10.40  255.255.255.252      No v¡nculo      172.18.10.42    256\n     172.18.10.42  255.255.255.255      No v¡nculo      172.18.10.42    256\n     172.18.10.43  255.255.255.255      No v¡nculo      172.18.10.42    256\n      192.168.1.0    255.255.255.0      No v¡nculo      192.168.1.26    291\n     192.168.1.26  255.255.255.255      No v¡nculo      192.168.1.26    291\n    192.168.1.255  255.255.255.255      No v¡nculo      192.168.1.26    291\n     192.168.56.0    255.255.255.0      No v¡nculo      192.168.56.1    281\n     192.168.56.1  255.255.255.255      No v¡nculo      192.168.56.1    281\n   192.168.56.255  255.255.255.255      No v¡nculo      192.168.56.1    281\n        224.0.0.0        240.0.0.0      No v¡nculo         127.0.0.1    331\n        224.0.0.0        240.0.0.0      No v¡nculo      192.168.56.1    281\n        224.0.0.0        240.0.0.0      No v¡nculo      192.168.1.26    291\n        224.0.0.0        240.0.0.0      No v¡nculo      172.18.10.42    256\n  255.255.255.255  255.255.255.255      No v¡nculo         127.0.0.1    331\n  255.255.255.255  255.255.255.255      No v¡nculo      192.168.56.1    281\n  255.255.255.255  255.255.255.255      No v¡nculo      192.168.1.26    291\n  255.255.255.255  255.255.255.255      No v¡nculo      172.18.10.42    256\n===========================================================================\nRotas persistentes:\n  Nenhuma\n",
+    "interfaces": {
+      "Ethernet 2": {
+        "ips": [
+          "172.18.10.42",
+          "fde4:8dba:82e0::1008",
+          "fde4:8dba:82e0::1009",
+          "fde4:8dba:82e0::100a",
+          "fe80::17de:1eba:893d:57ef"
+        ],
+        "status": {
+          "isup": true,
+          "duplex": 2,
+          "speed": 10,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "HoxxVPN": {
+        "ips": [
+          "169.254.156.140"
+        ],
+        "status": {
+          "isup": false,
+          "duplex": 2,
+          "speed": 100,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "Ethernet 3": {
+        "ips": [
+          "192.168.56.1"
+        ],
+        "status": {
+          "isup": true,
+          "duplex": 2,
+          "speed": 1000,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "Conexão Local* 9": {
+        "ips": [
+          "169.254.225.3"
+        ],
+        "status": {
+          "isup": false,
+          "duplex": 2,
+          "speed": 0,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "Conexão Local* 10": {
+        "ips": [
+          "169.254.81.103"
+        ],
+        "status": {
+          "isup": false,
+          "duplex": 2,
+          "speed": 0,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "Ethernet": {
+        "ips": [
+          "192.168.1.26"
+        ],
+        "status": {
+          "isup": true,
+          "duplex": 2,
+          "speed": 100,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "Wi-Fi": {
+        "ips": [
+          "169.254.215.104"
+        ],
+        "status": {
+          "isup": false,
+          "duplex": 2,
+          "speed": 144,
+          "mtu": 1500,
+          "flags": ""
+        }
+      },
+      "Loopback Pseudo-Interface 1": {
+        "ips": [
+          "127.0.0.1",
+          "::1"
+        ],
+        "status": {
+          "isup": true,
+          "duplex": 2,
+          "speed": 1073,
+          "mtu": 1500,
+          "flags": ""
+        }
+      }
+    }
+  }
+}
