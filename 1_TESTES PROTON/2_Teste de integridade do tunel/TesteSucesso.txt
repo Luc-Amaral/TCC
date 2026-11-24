@@ -1,2 +1,0 @@
-Proton VPN, não demonstrou vazamento de integridade no tunel, foi feito pesquisa a partir de um site http não seguro onde a VPN não registrou o acesso, visto a captura de pacotes do mesmo
-site pesquisado: http://neverssl.com
