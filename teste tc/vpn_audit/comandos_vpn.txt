@@ -1,0 +1,82 @@
+=======================================================
+ COMANDOS DE AUDITORIA VPN — vpn_audit
+=======================================================
+ Pré-requisito: abrir o PowerShell como ADMINISTRADOR
+
+ Passo 1 — Entrar na pasta e ativar a venv:
+   cd "c:\Users\lucas\Documents\academic\TCC TESTES\vpn_audit"
+   .\venv\Scripts\Activate.ps1
+
+ Passo 2 — Rodar o comando com a VPN DESLIGADA no início!
+ Passo 3 — O script medirá o Baseline QoS e depois pedirá:
+   >>> LIGUE O CLIENTE VPN <<<
+   Você conecta a VPN e pressiona [ENTER].
+=======================================================
+
+
+-------------------------------------------------------
+ 1. ProtonVPN
+-------------------------------------------------------
+ Processo : ProtonVPNService  (serviço em 2º plano que mantém o túnel ativo)
+ Interface: ProTUN            (adaptador WireGuard/TUN do Proton)
+-------------------------------------------------------
+python main.py --nome-vpn "ProtonVPNService" --interface-vpn "ProTUN" --rotulo "ProtonVPN" --salvar-relatorio
+
+
+-------------------------------------------------------
+ 2. TunnelBear  (nova arquitetura — Shadowsocks + V2Ray)
+-------------------------------------------------------
+ Processo : shadowsocks-net-local
+ Interface: sem interface dedicada (proxy); não passe --interface-vpn
+ Nota     : testes L3/L4 serão INCONCLUSIVO (esperado academicamente)
+-------------------------------------------------------
+python main.py --nome-vpn "shadowsocks-net-local" --rotulo "TunnelBear" --salvar-relatorio
+
+
+-------------------------------------------------------
+ 3. HoxxVPN
+-------------------------------------------------------
+ Processo : HoxxVPN
+ Interface: HoxxVPN  (adaptador TAP-Windows Adapter V9 chamado HoxxVPN)
+-------------------------------------------------------
+python main.py --nome-vpn "HoxxVPN" --interface-vpn "HoxxVPN" --rotulo "HoxxVPN" --salvar-relatorio
+
+
+-------------------------------------------------------
+ 4. tuxlerVPN  (proxy residencial)
+-------------------------------------------------------
+ Processo : tuxlerVPN
+ Interface: sem interface dedicada (proxy); não passe --interface-vpn
+-------------------------------------------------------
+python main.py --nome-vpn "tuxlerVPN" --rotulo "tuxlerVPN" --salvar-relatorio
+
+
+-------------------------------------------------------
+ 5. Urban VPN
+-------------------------------------------------------
+ Processo : urban-vpn-service
+ Interface: sem interface dedicada (proxy); não passe --interface-vpn
+-------------------------------------------------------
+python main.py --nome-vpn "urban-vpn-service" --rotulo "UrbanVPN" --salvar-relatorio
+
+
+=======================================================
+ FLAGS OPCIONAIS ÚTEIS
+=======================================================
+ --versao-cliente "X.Y.Z"    Registra a versão do cliente no JSON
+ --servidor-vpn "BR-SP"      Registra o servidor escolhido no JSON
+ --repeticoes-qos 5          Mais repetições no speedtest (padrão: 3)
+ --pular-killswitch          Não encerra o processo da VPN no final
+ --forcar-testes             Roda mesmo sem túnel detectado
+ --anonimizar                Mascara IPs reais no JSON salvo
+
+=======================================================
+ RELATÓRIOS GERADOS EM: resultados\
+=======================================================
+ auditoria_vpn_NOME_DATA.json          -> Relatório completo
+ auditoria_vpn_NOME_DATA_seguranca.png -> Gráfico de segurança
+ auditoria_vpn_NOME_DATA_qos.png       -> Gráfico de QoS
+ comparativo_seguranca_multi_vpn.png   -> Heatmap geral (todas as VPNs)
+ comparativo_qos_multi_vpn.png         -> Comparativo de velocidade
+ resumo_multi_vpn.csv                  -> Tabela resumo
+=======================================================
